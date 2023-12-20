@@ -63,7 +63,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
-      imagem.src = './PedeAlgodao/img-Index/laranja.png';
+      imagem.src = '/PedeAlgodao/img-Index/laranja.png';
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
@@ -71,7 +71,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = './PedeAlgodao/img-Index/branca.png';
+      imagem.src = '/PedeAlgodao/img-Index/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {

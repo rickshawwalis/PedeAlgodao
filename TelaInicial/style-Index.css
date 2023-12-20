@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*titulo*/
+.tituloA1, .textoA1{
+    margin-bottom: 15px;
+}
+
+.textoA1{
+    text-align: justify;
+    width: 340px;
+}
+
+/*centralizando a*/
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    margin: 50px auto;
+
+}
+
+/*imagens*/
+.produto {
+    width: 350px;
+    height: 300px;
+}
+
+#imagemSapato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#fotosImagem {
+    width: 300px;
+    height: 300px;
+}
+
+.logo{
+    margin: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*definição de cada botão cor e tamano*/
+.cores,
+.tamanhos {
+    color: black;
+    background-color: white;
+    font-size: 12px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*definição do layout onde estão os botões */
+#cor,
+#tamanho {
+    margin: 10px 0px 15px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    flex-wrap: wrap;
+}
+
+/*definição do botão concluir */
+.botConcluinr {
+    margin: 0px 0px 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.concluir {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 50px 50px;
+    background-color: rgb(0, 106, 255);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.adquirir {
+    margin: 15px 0px 20px 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 20px 20px;
+    background-color: rgb(0, 106, 255);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cancelar {
+    width: 100px;
+    border-radius: 35px 20px;
+    padding: 5px;
+    margin: 25px 0px 30px 0px;
+    background-color: rgb(157, 70, 70);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+

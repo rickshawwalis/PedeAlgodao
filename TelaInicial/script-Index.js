@@ -71,7 +71,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = '/PedeAlgodao/img-Index/branca.png';
+      imagem.src = './PedeAlgodao/img-Index/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {

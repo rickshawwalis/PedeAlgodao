@@ -55,23 +55,23 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#A87AA9";
    }
     if (el.classList.contains("preto")) {
-      imagem.src = '/img-Index/preta.png';
+      imagem.src = '/PedeAlgodao/img-Index/preta.png';
       el.style.backgroundColor = "black";
     }
     if (el.classList.contains("amareloouro")) {
-      imagem.src = '/img-Index/amareloouro.png';
+      imagem.src = '../PedeAlgodao/img-Index/amareloouro.png';
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
-      imagem.src = '/img-Index/laranja.png';
+      imagem.src = './PedeAlgodao/img-Index/laranja.png';
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
-      imagem.src = '../img-Index/rosa.png';
+      imagem.src = '/../PedeAlgodaoimg-Index/rosa.png';
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = '/../img-Index/branca.png';
+      imagem.src = '../../img-Index/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {
@@ -79,7 +79,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#666F8C";
     }
     if (el.classList.contains("azulclaro")) {
-      imagem.src = '/img-Index/azulbebe.png';
+      imagem.src = '/PedeAlgodao/img-Index/azulbebe.png';
       el.style.backgroundColor = "#61A2B0";
     }
     if (el.classList.contains("verdemilitar")) {

@@ -51,7 +51,7 @@ document.addEventListener('click', (e) => {
     imagemSapato.innerHTML = "";
 
     if (el.classList.contains("bege")) {
-      imagem.src = '/img-Index/lilas.png';
+      imagem.src = '../../PedeAlgodao/img-Index/lilas.png';
       el.style.backgroundColor = "#A87AA9";
    }
     if (el.classList.contains("preto")) {

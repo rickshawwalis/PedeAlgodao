@@ -51,19 +51,19 @@ document.addEventListener('click', (e) => {
     imagemSapato.innerHTML = "";
 
     if (el.classList.contains("bege")) {
-      imagem.src = '../img-Index/lilas.png';
+      imagem.src = '/img-Index/lilas.png';
       el.style.backgroundColor = "#A87AA9";
    }
     if (el.classList.contains("preto")) {
-      imagem.src = '../img-Index/preta.png';
+      imagem.src = '/img-Index/preta.png';
       el.style.backgroundColor = "black";
     }
     if (el.classList.contains("amareloouro")) {
-      imagem.src = '../img-Index/amareloouro.png';
+      imagem.src = '/img-Index/amareloouro.png';
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
-      imagem.src = '../img-Index/laranja.png';
+      imagem.src = '/img-Index/laranja.png';
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
@@ -71,19 +71,19 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = '../img-Index/branca.png';
+      imagem.src = '/../img-Index/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {
-      imagem.src = '../img-Index/azulmarinho.png';
+      imagem.src = '../../img-Index/azulmarinho.png';
       el.style.backgroundColor = "#666F8C";
     }
     if (el.classList.contains("azulclaro")) {
-      imagem.src = '../img-Index/azulbebe.png';
+      imagem.src = '/img-Index/azulbebe.png';
       el.style.backgroundColor = "#61A2B0";
     }
     if (el.classList.contains("verdemilitar")) {
-      imagem.src = '../img-Index/verdemilitar.png';
+      imagem.src = '/img-Index/verdemilitar.png';
       el.style.backgroundColor = "#6F735C";
     }
     imagemSapato.appendChild(imagem);

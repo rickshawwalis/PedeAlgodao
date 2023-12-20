@@ -51,7 +51,7 @@ document.addEventListener('click', (e) => {
     imagemSapato.innerHTML = "";
 
     if (el.classList.contains("bege")) {
-      imagem.src = '../../PedeAlgodao/img-Index/lilas.png';
+      imagem.src = '/PedeAlgodao/img-Index/lilas.png';
       el.style.backgroundColor = "#A87AA9";
    }
     if (el.classList.contains("preto")) {
@@ -59,7 +59,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "black";
     }
     if (el.classList.contains("amareloouro")) {
-      imagem.src = '../PedeAlgodao/img-Index/amareloouro.png';
+      imagem.src = '/PedeAlgodao/img-Index/amareloouro.png';
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
@@ -67,15 +67,15 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
-      imagem.src = '/../PedeAlgodaoimg-Index/rosa.png';
+      imagem.src = '/PedeAlgodao/img-Index/rosa.png';
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = '../../img-Index/branca.png';
+      imagem.src = '/PedeAlgodao/img-Index/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {
-      imagem.src = '../../img-Index/azulmarinho.png';
+      imagem.src = '/PedeAlgodao/img-Index/azulmarinho.png';
       el.style.backgroundColor = "#666F8C";
     }
     if (el.classList.contains("azulclaro")) {
@@ -83,7 +83,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#61A2B0";
     }
     if (el.classList.contains("verdemilitar")) {
-      imagem.src = '/img-Index/verdemilitar.png';
+      imagem.src = '/PedeAlgodao/img-Index/verdemilitar.png';
       el.style.backgroundColor = "#6F735C";
     }
     imagemSapato.appendChild(imagem);

@@ -1,3 +1,4 @@
+// PARTE PLUMA NUVEM
 //ABRE AS OPÇÕES DE CORES DE TAMANHOS
 const comprar = () => {
   let adquirir = document.querySelector(".adquirir");
@@ -25,7 +26,7 @@ const limparSelecoes = () => {
   imagemSapato.innerHTML = "";
 }
 
-//FECHA
+//FECHAR
 const cancelar = () => {
   let tituloA1 = document.querySelector(".tituloA1")
   let ocultar = document.querySelector(".cancelar");

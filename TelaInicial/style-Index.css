@@ -4,13 +4,16 @@
     box-sizing: border-box;
 }
 /*titulo*/
-.tituloA1, .textoA1{
+.tituloA1{
     margin-bottom: 15px;
+    color: #96206F;
+
 }
 
 .textoA1{
     text-align: justify;
     width: 340px;
+    margin-bottom: 15px;
 }
 
 /*centralizando a*/
@@ -48,6 +51,7 @@ section {
     display:flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
 }
 
 /*definição de cada botão cor e tamano*/
@@ -72,46 +76,54 @@ section {
     width: 300px;
     flex-wrap: wrap;
 }
+/*altera cada um dos botões cores e tamanho*/
+.cores,.tamanhos{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px;
+    border: 1px solid;
+}
 
-/*definição do botão concluir */
+/*definição da div botão concluir */
 .botConcluinr {
     margin: 0px 0px 100px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+/*definição do botão concluir */
 .concluir {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 50px 50px;
-    background-color: rgb(0, 106, 255);
+    background-color: #96206F;
     color: white;
     font-size: 16px;
     padding: 15px;
     cursor: pointer;
     font-weight: 600;
+    border: 1px solid black;
 }
 
 .adquirir {
     margin: 15px 0px 20px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 20px 20px;
-    background-color: rgb(0, 106, 255);
+    background-color: #96206F;
     color: white;
     font-size: 16px;
     padding: 15px;
     cursor: pointer;
     font-weight: 600;
+    border: 1px solid black;
 }
 
 .cancelar {
     width: 100px;
-    border-radius: 35px 20px;
+    border-radius: 20px;
     padding: 5px;
     margin: 25px 0px 30px 0px;
-    background-color: rgb(157, 70, 70);
+    background-color: rgb(253, 75, 75);
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    border: 1px solid black;
 }
 

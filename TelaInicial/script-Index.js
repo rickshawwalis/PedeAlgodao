@@ -55,39 +55,48 @@ document.addEventListener('click', (e) => {
     imagemSapato.innerHTML = "";
 
     if (el.classList.contains("bege")) {
-      imagem.src = '/PedeAlgodao/img-Index/lilas.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/lilas.png';
+      imagem.src = '/img-Index/PLUMANUVEM/lilas.png';
       el.style.backgroundColor = "#A87AA9";
-   }
+    }
     if (el.classList.contains("preto")) {
-      imagem.src = '/PedeAlgodao/img-Index/preta.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/preta.png';
+      imagem.src = '/img-Index/PLUMANUVEM/preta.png';
       el.style.backgroundColor = "black";
     }
     if (el.classList.contains("amareloouro")) {
-      imagem.src = '/PedeAlgodao/img-Index/amareloouro.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/amareloouro.png';
+      imagem.src = '/img-Index/PLUMANUVEM/amareloouro.png';
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
-      imagem.src = '/PedeAlgodao/img-Index/laranja.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/laranja.png';
+      imagem.src = '/img-Index/PLUMANUVEM/laranja.png';
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
-      imagem.src = '/PedeAlgodao/img-Index/rosa.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/rosa.png';
+      imagem.src = '/img-Index/PLUMANUVEM/rosa.png';
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
-      imagem.src = '/PedeAlgodao/img-Index/branca.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/branca.png';
+      imagem.src = '/img-Index/PLUMANUVEM/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {
-      imagem.src = '/PedeAlgodao/img-Index/azulmarinho.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulmarinho.png';
+      imagem.src = '/img-Index/PLUMANUVEM/azulmarinho.png';
       el.style.backgroundColor = "#666F8C";
     }
     if (el.classList.contains("azulclaro")) {
-      imagem.src = '/PedeAlgodao/img-Index/azulbebe.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulbebe.png';
+      imagem.src = '/img-Index/PLUMANUVEM/azulbebe.png';
       el.style.backgroundColor = "#61A2B0";
     }
     if (el.classList.contains("verdemilitar")) {
-      imagem.src = '/PedeAlgodao/img-Index/verdemilitar.png';
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
+      imagem.src = '/img-Index/PLUMANUVEM/verdemilitar.png';
       el.style.backgroundColor = "#6F735C";
     }
     imagemSapato.appendChild(imagem);
@@ -105,5 +114,5 @@ document.addEventListener('click', (ev) => {
   if (et.classList.contains("tamanhos")) {
     et.style.backgroundColor = "#61A2B0";
   }
- 
+
 });

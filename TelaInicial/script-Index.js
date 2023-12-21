@@ -6,6 +6,8 @@ const comprar = () => {
   if (adquirir) {
     mostrar.style.display = 'block';
   }
+  mostrar.scrollIntoView({ behavior: 'smooth' });
+
 }
 //LIMPA TUDO QUANDO CLICAR NO BOTÃO CANCELAR
 const limparSelecoes = () => {
@@ -87,6 +89,7 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#6F735C";
     }
     imagemSapato.appendChild(imagem);
+    imagemSapato.scrollIntoView({ behavior: 'smooth' })
   }
 });
 

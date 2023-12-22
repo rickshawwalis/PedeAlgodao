@@ -39,7 +39,7 @@ section {
     height: 300px;
 }
 
-#imagemSapato {
+#imagemSapato,#imagemSapato1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,16 +59,20 @@ section {
     height: 50px;
 }
 
-/*definição de cada botão cor e tamano*/
-.cores,
-.tamanhos {
+/*definição de cada botão cor e tamahno*/
+.cores,.cores1,
+.tamanhos,.tamanhos1 {
     color: black;
     background-color: white;
     font-size: 12px;
-    padding: 15px;
+    padding: 12px;
     cursor: pointer;
     font-weight: 600;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px;
+    border: 1px solid;
+    width: 150px;
 }
 
 /*definição do layout onde estão os botões */
@@ -78,14 +82,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 10px;
-    width: 300px;
     flex-wrap: wrap;
-}
-/*altera cada um dos botões cores e tamanho*/
-.cores,.tamanhos{
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px;
-    border: 1px solid;
 }
 
 /*definição da div botão concluir */
@@ -108,7 +105,7 @@ section {
     border: 1px solid black;
 }
 
-.adquirir {
+.adquirir,.adquirir1 {
     margin: 15px 0px 20px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 20px 20px;
@@ -121,7 +118,7 @@ section {
     border: 1px solid black;
 }
 
-.cancelar {
+.cancelar,.cancelar1 {
     width: 100px;
     border-radius: 20px;
     padding: 5px;

@@ -100,6 +100,18 @@ document.addEventListener('click', (e) => {
       imagem.src = '/img-Index/PLUMANUVEM/verdemilitar.png';
       el.style.backgroundColor = "#6F735C";
     }
+
+    if (el.classList.contains("nude")) {
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
+      imagem.src = '/img-Index/PLUMANUVEM/nude.png';
+      el.style.backgroundColor = "#E3C9B9";
+    }
+
+    if (el.classList.contains("neon")) {
+      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
+      imagem.src = '/img-Index/PLUMANUVEM/neon.png';
+      el.style.backgroundColor = "#BCE14F";
+    }
     imagemSapato.appendChild(imagem);
     imagemSapato.scrollIntoView({ behavior: 'smooth' })
   }

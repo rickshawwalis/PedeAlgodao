@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pé de Algodão</title>
     <link rel="stylesheet" href="TelaInicial/style-Index.css">
-    <script src="TelaInicial/plumanuvem-Index.js " defer></script>
+    <script src="TelaInicial/plumaNuvem-Index.js " defer></script>
     <script src="TelaInicial/plumaStar-Index.js" defer></script>
+    <script src="TelaInicial/plumaConfort-Index.js" defer></script>
 </head>
 
 <body>
     <img src="img-Index/LOGO.png" alt="" class="logo">
     <section>
         <!--PLUMA NUVEM -->
-        <h1 class="tituloA1 tituloA2">PLUMA NUVEM - R$ 120,00</h1>
+        <h1 class="tituloA">PLUMA NUVEM - R$ 120,00</h1>
         <p class="textoA1">Perfeita para aproveitar os dias de calor, o modelo completa os looks de verão com mais conforto por conta da
             sua composição em em EVA, garantindo o impacto na suas pernas e pés, os chinelos Pé de Pluma garanti um
             visual superdivertido.</p>
@@ -65,7 +66,7 @@
         </div>
 
 <!--PARTE DA PLUMA STAR -->
-        <h1 class="tituloA1  tituloA3">PLUMA STAR - R$ 180,00</h1>
+        <h1 class="tituloA  tituloA2">PLUMA STAR - R$ 180,00</h1>
         <p class="textoA1">A PLUMA STAR é a sandalia queridinha das estrelas.</p>
         <img src="img-Index/PLUMASTAR/plumastar.png" alt="" class="produto">
 
@@ -114,7 +115,7 @@
 
         
 <!--PLUMA CONFORT  -->
-<h1 class="tituloA1  tituloA4">PLUMA CONFORT - R$ 120,00</h1>
+<h1 class="tituloA  tituloA3">PLUMA CONFORT - R$ 120,00</h1>
 <p class="textoA1">LEVINHO / CONFORTÁVEL / CHEIO DE ESTILO
 <br><br>Super elegante e Confortável , combinando com qualquer roupa, Estilo e ocasião, levando o conforto no dia a dia.  </p>
 <img src="img-Index/PLUMACONFORT/plumaconfort.png" alt="" class="produto">
@@ -130,14 +131,15 @@
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege2 cores2" value="LILAS">LILÁS</button>
-        <button type="button" class="preto2 cores2" value="PRETO">PRETO</button>
         <button type="button" class="amareloouro2 cores2" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja2 cores2" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe2 cores2" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco2 cores2" value="BRANCO">BRANCO</button>
+        <button type="button" class="azulbebe2 cores2" value="AZUL BEBE">AZUL BEBÊ</button>
         <button type="button" class="azulmarinho2 cores2" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro2 cores2" value="AZUL CLARO">AZUL CLARO</button>
+        <button type="button" class="branco2 cores2" value="BRANCA">BRANCA</button>
+        <button type="button" class="marromclaro2 cores2" value="MARROM CLARO">MARROM CLARO</button>
+        <button type="button" class="neon2 cores2" value="NEON">NEON</button>
+        <button type="button" class="nude2 cores2" value="ROSA BEBE">NUDE</button>
+        <button type="button" class="preto2 cores2" value="PRETA">PRETA</button>
+        <button type="button" class="rosa2 cores2" value="AZUL CLARO">ROSA</button>
         <button type="button" class="verdemilitar2 cores2" value="VERDE">VERDE MILITAR</button>
     </div>
 
@@ -160,46 +162,44 @@
 
 
 <!--PLUMA KIDS-->
-<h1 class="tituloA1  tituloA5">PLUMA CONFORT - R$ 120,00</h1>
+<h1 class="tituloA  tituloA4">PLUMA CONFORT - R$ 120,00</h1>
 <p class="textoA1">Pensando também nas Crianças, a Pé de Pluma cria números menores que vai da numeração 25/26 ao 31/32, assim a diversão é garantida :)</p>
 <img src="img-Index/PLUMAKIDS/plumakids.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar()" class="adquirir" data-tex="PLUMA KIDS"
+    <button type="button" onclick="comprar3()" class="adquirir3" data-tex="PLUMA KIDS"
         value="120,00">VER MODELOS</button>
 </div>
 
-<div id="mostrarTudo" style="display: none;">
+<div id="mostrarTudo3" style="display: none;">
     
-    <button type="button" onclick="cancelar()" class="cancelar">CANCELAR</button>
+    <button type="button" onclick="cancelar3()" class="cancelar3">CANCELAR</button>
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores" value="VERDE">VERDE MILITAR</button>
+        <button type="button" class="bege cores3" value="LILAS">LILÁS</button>
+        <button type="button" class="preto cores3" value="PRETO">PRETO</button>
+        <button type="button" class="amareloouro cores3" value="AMARELO OURO">AMARELO OURO</button>
+        <button type="button" class="laranja cores3" value="LARANJA">LARANJA</button>
+        <button type="button" class="rosabebe cores3" value="ROSA BEBE">ROSA BEBÊ</button>
+        <button type="button" class="branco cores3" value="BRANCO">BRANCO</button>
+        <button type="button" class="azulmarinho cores3" value="AZUL MARINHO">AZUL MARINHO</button>
+        <button type="button" class="azulclaro cores3" value="AZUL CLARO">AZUL CLARO</button>
+        <button type="button" class="verdemilitar cores3" value="VERDE">VERDE MILITAR</button>
     </div>
 
-    <div id="imagemSapato"></div>
+    <div id="imagemSapato3"></div>
 
     <p><strong>TAMANHO</strong></p>
     <div id="tamanho">
-        <button type="button" class="tamanhos" value="33/34">33/34</button>
-        <button type="button" class="tamanhos" value="35/36">35/36</button>
-        <button type="button" class="tamanhos" value="37/38">37/38</button>
-        <button type="button" class="tamanhos" value="39/40">39/40</button>
-        <button type="button" class="tamanhos" value="41/42">41/42</button>
-        <button type="button" class="tamanhos" value="43/44">43/44</button>       
+        <button type="button" class="tamanhos3" value="25/26">25/26</button>
+        <button type="button" class="tamanhos3" value="27/28">27/28</button>
+        <button type="button" class="tamanhos3" value="29/30">29/30</button>
+        <button type="button" class="tamanhos3" value="31/32">31/32</button>    
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir">
+        <button type="button" class="concluir3">
             CONCLUIR
         </button>
     </div>
@@ -207,46 +207,44 @@
 
 
 <!--PLUMA PLATAFORMA-->
-<h1 class="tituloA1  tituloA6">PLUMA PLATAFORMA - R$ 139,00</h1>
+<h1 class="tituloA  tituloA5">PLUMA PLATAFORMA - R$ 139,00</h1>
 <p class="textoA1">Agora no modelo de Dedo, Sandália Nuvem e Magnética vem com um saltinho Plataforma super elegante e Confortável, combinando com qualquer roupa, Estilo e ocasião.</p>
 <img src="img-Index/PLUMAPLATAFORMA/plumaplataforma.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar()" class="adquirir" data-tex="PLUMA PLATAFORMA"
+    <button type="button" onclick="comprar4()" class="adquirir4" data-tex="PLUMA PLATAFORMA"
         value="139,00">VER MODELOS</button>
 </div>
 
-<div id="mostrarTudo" style="display: none;">
+<div id="mostrarTudo4" style="display: none;">
     
-    <button type="button" onclick="cancelar()" class="cancelar">CANCELAR</button>
+    <button type="button" onclick="cancelar4()" class="cancelar4">CANCELAR</button>
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores" value="VERDE">VERDE MILITAR</button>
+        <button type="button" class="bege cores4" value="LILAS">LILÁS</button>
+        <button type="button" class="preto cores4" value="PRETO">PRETO</button>
+        <button type="button" class="amareloouro cores4" value="AMARELO OURO">AMARELO OURO</button>
+        <button type="button" class="laranja cores4" value="LARANJA">LARANJA</button>
+        <button type="button" class="rosabebe cores4" value="ROSA BEBE">ROSA BEBÊ</button>
+        <button type="button" class="branco cores4" value="BRANCO">BRANCO</button>
+        <button type="button" class="azulmarinho cores4" value="AZUL MARINHO">AZUL MARINHO</button>
+        <button type="button" class="azulclaro cores4" value="AZUL CLARO">AZUL CLARO</button>
+        <button type="button" class="verdemilitar cores4" value="VERDE">VERDE MILITAR</button>
     </div>
 
-    <div id="imagemSapato"></div>
+    <div id="imagemSapato4"></div>
 
     <p><strong>TAMANHO</strong></p>
     <div id="tamanho">
-        <button type="button" class="tamanhos" value="33/34">33/34</button>
-        <button type="button" class="tamanhos" value="35/36">35/36</button>
-        <button type="button" class="tamanhos" value="37/38">37/38</button>
-        <button type="button" class="tamanhos" value="39/40">39/40</button>
-        <button type="button" class="tamanhos" value="41/42">41/42</button>
-        <button type="button" class="tamanhos" value="43/44">43/44</button>       
+        <button type="button" class="tamanhos4" value="33/34">33/34</button>
+        <button type="button" class="tamanhos4" value="35/36">35/36</button>
+        <button type="button" class="tamanhos4" value="37/38">37/38</button>
+        <button type="button" class="tamanhos4" value="39/40">39/40</button>      
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir">
+        <button type="button" class="concluir4">
             CONCLUIR
         </button>
     </div>
@@ -254,42 +252,41 @@
 
 
 <!--PLUMA SALTINHO-->
-<h1 class="tituloA1  tituloA7">PLUMA SALTINHO - R$ 139,00</h1>
+<h1 class="tituloA  tituloA6">PLUMA SALTINHO - R$ 139,00</h1>
 <p class="textoA1">Agora no modelo de Dedo, Sandália Nuvem e Magnética vem com um saltinho super elegante e Confortável, combinando com qualquer roupa, estilo e ocasião. </p>
 <img src="img-Index/PLUMASALTINHO/plumasaltinho.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar()" class="adquirir" data-tex="PLUMA SALTINHO"
+    <button type="button" onclick="comprar5()" class="adquirir5" data-tex="PLUMA SALTINHO"
         value="139,00">VER MODELOS</button>
 </div>
 
-<div id="mostrarTudo" style="display: none;">
+<div id="mostrarTudo5" style="display: none;">
     
-    <button type="button" onclick="cancelar()" class="cancelar">CANCELAR</button>
+    <button type="button" onclick="cancelar5()" class="cancelar5">CANCELAR</button>
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores" value="VERDE">VERDE MILITAR</button>
+        <button type="button" class="bege cores5" value="LILAS">LILÁS</button>
+        <button type="button" class="preto cores5" value="PRETO">PRETO</button>
+        <button type="button" class="amareloouro cores5" value="AMARELO OURO">AMARELO OURO</button>
+        <button type="button" class="laranja cores5" value="LARANJA">LARANJA</button>
+        <button type="button" class="rosabebe cores5" value="ROSA BEBE">ROSA BEBÊ</button>
+        <button type="button" class="branco cores5" value="BRANCO">BRANCO</button>
+        <button type="button" class="azulmarinho cores5" value="AZUL MARINHO">AZUL MARINHO</button>
+        <button type="button" class="azulclaro core5" value="AZUL CLARO">AZUL CLARO</button>
+        <button type="button" class="verdemilitar cores5" value="VERDE">VERDE MILITAR</button>
     </div>
 
     <div id="imagemSapato"></div>
 
     <p><strong>TAMANHO</strong></p>
     <div id="tamanho">
-        <button type="button" class="tamanhos" value="33/34">33/34</button>
-        <button type="button" class="tamanhos" value="35/36">35/36</button>
-        <button type="button" class="tamanhos" value="37/38">37/38</button>
-        <button type="button" class="tamanhos" value="39/40">39/40</button>
-        <button type="button" class="tamanhos" value="41/42">41/42</button>
-        <button type="button" class="tamanhos" value="43/44">43/44</button>       
+        <button type="button" class="tamanhos5" value="33/34">33/34</button>
+        <button type="button" class="tamanhos5" value="35/36">35/36</button>
+        <button type="button" class="tamanhos5" value="37/38">37/38</button>
+        <button type="button" class="tamanhos5" value="39/40">39/40</button>
+       
 
     </div>
     <div class="botConcluinr">
@@ -301,46 +298,44 @@
 
 
 <!--PLUMA MOCASSIM -->
-<h1 class="tituloA1  tituloA8">PLUMA MOCASSIM - R$ 139,00</h1>
+<h1 class="tituloA  tituloA7">PLUMA MOCASSIM - R$ 139,00</h1>
 <p class="textoA1">Agora no modelo de Mocassim Pluma, Super elegante e Confortável , ideal para  Área da Saúde, Cabelereiros, Restaurantes e Profissionais que passam muito tempo em Pé. </p>
 <img src="img-Index/PLUMAMOCASSIM/plumamocassim.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar()" class="adquirir" data-tex="PLUMA MOCASSIM"
+    <button type="button" onclick="comprar6()" class="adquirir6" data-tex="PLUMA MOCASSIM"
         value="139,00">VER MODELOS</button>
 </div>
 
-<div id="mostrarTudo" style="display: none;">
+<div id="mostrarTudo6" style="display: none;">
     
-    <button type="button" onclick="cancelar()" class="cancelar">CANCELAR</button>
+    <button type="button" onclick="cancelar6()" class="cancelar6">CANCELAR</button>
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores" value="VERDE">VERDE MILITAR</button>
+        <button type="button" class="bege cores6" value="LILAS">LILÁS</button>
+        <button type="button" class="preto cores6" value="PRETO">PRETO</button>
+        <button type="button" class="amareloouro cores6" value="AMARELO OURO">AMARELO OURO</button>
+        <button type="button" class="laranja cores6" value="LARANJA">LARANJA</button>
+        <button type="button" class="rosabebe cores6" value="ROSA BEBE">ROSA BEBÊ</button>
+        <button type="button" class="branco cores6" value="BRANCO">BRANCO</button>
+        <button type="button" class="azulmarinho cores6" value="AZUL MARINHO">AZUL MARINHO</button>
+        <button type="button" class="azulclaro cores6" value="AZUL CLARO">AZUL CLARO</button>
+        <button type="button" class="verdemilitar cores6" value="VERDE">VERDE MILITAR</button>
     </div>
 
     <div id="imagemSapato"></div>
 
     <p><strong>TAMANHO</strong></p>
     <div id="tamanho">
-        <button type="button" class="tamanhos" value="33/34">33/34</button>
-        <button type="button" class="tamanhos" value="35/36">35/36</button>
-        <button type="button" class="tamanhos" value="37/38">37/38</button>
-        <button type="button" class="tamanhos" value="39/40">39/40</button>
-        <button type="button" class="tamanhos" value="41/42">41/42</button>
-        <button type="button" class="tamanhos" value="43/44">43/44</button>       
+        <button type="button" class="tamanhos6" value="33/34">33/34</button>
+        <button type="button" class="tamanhos6" value="35/36">35/36</button>
+        <button type="button" class="tamanhos6" value="37/38">37/38</button>
+        <button type="button" class="tamanhos6" value="39/40">39/40</button>
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir">
+        <button type="button" class="concluir6">
             CONCLUIR
         </button>
     </div>

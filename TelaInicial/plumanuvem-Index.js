@@ -28,13 +28,13 @@ const limparSelecoes = () => {
 
 //FECHAR
 const cancelar = () => {
-  let tituloA1 = document.querySelector(".tituloA1")
+  let tituloA = document.querySelector(".tituloA")
   let ocultar = document.querySelector(".cancelar");
   let mostrar = document.querySelector("#mostrarTudo");
   if (ocultar) {
     mostrar.style.display = 'none';
   }
-  tituloA1.scrollIntoView({ behavior: 'smooth' })
+  tituloA.scrollIntoView({ behavior: 'smooth' })
   limparSelecoes()
 }
 

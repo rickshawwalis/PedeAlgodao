@@ -3,8 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/*titulo*/
-.tituloA1{
+/*titulo de cada topico*/
+.tituloA{
     margin-bottom: 15px;
     color: #96206F;
     font-size: 22px;
@@ -14,14 +14,14 @@
 .tituloA2,.tituloA3,.tituloA4,.tituloA5,.tituloA6,.tituloA7,.tituloA8{
     margin-top: 100px;
 }
-
+/*Texto de cada topico*/
 .textoA1{
     text-align: justify;
     width: 340px;
     margin-bottom: 15px;
 }
 
-/*centralizando a*/
+/*centralizando os layout/caixas*/
 section {
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ section {
     height: 300px;
 }
 
-#imagemSapato,#imagemSapato1 {
+#imagemSapato,#imagemSapato1,#imagemSapato2,#imagemSapato3,#imagemSapato4,#imagemSapato5,#imagemSapato6 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,8 +60,8 @@ section {
 }
 
 /*definição de cada botão cor e tamahno*/
-.cores,.cores1,
-.tamanhos,.tamanhos1 {
+.cores,.cores1,.cores2,.cores3,.cores4,.cores5,.cores6
+.tamanhos,.tamanhos1,.tamanhos2,.tamanhos3,.tamanhos4,.tamanhos5,.tamanhos6 {
     color: black;
     background-color: white;
     font-size: 12px;
@@ -93,7 +93,7 @@ section {
     align-items: center;
 }
 /*definição do botão concluir */
-.concluir {
+.concluir,.concluir1,.concluir2,.concluir2,.concluir3,.concluir4,.concluir5,.concluir6 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 50px 50px;
     background-color: #96206F;
@@ -105,7 +105,7 @@ section {
     border: 1px solid black;
 }
 
-.adquirir,.adquirir1 {
+.adquirir,.adquirir1,.adquirir2,.adquirir3,.adquirir4,.adquirir5,.adquirir6 {
     margin: 15px 0px 20px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 20px 20px;
@@ -118,7 +118,7 @@ section {
     border: 1px solid black;
 }
 
-.cancelar,.cancelar1 {
+.cancelar,.cancelar1,.cancelar2,.cancelar3,.cancelar4,.cancelar5,.cancelar6 {
     width: 100px;
     border-radius: 20px;
     padding: 5px;

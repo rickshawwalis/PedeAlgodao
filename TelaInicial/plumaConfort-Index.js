@@ -77,7 +77,7 @@ const comprar2 = () => {
       }
       if (el.classList.contains("neon2")) {
         imagem.src = '/img-Index/PLUMACONFORT/neon.jpeg';
-        el.style.backgroundColor = "#1845A2";
+        el.style.backgroundColor = "#BCE14F";
       }
       if (el.classList.contains("nude2")) {
         imagem.src = '/img-Index/PLUMACONFORT/nude.jpeg';

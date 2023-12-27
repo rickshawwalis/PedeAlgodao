@@ -113,7 +113,6 @@ document.addEventListener('click', (e) => {
       el.style.backgroundColor = "#BCE14F";
     }
     imagemSapato.appendChild(imagem);
-    imagemSapato.scrollIntoView({ behavior: 'smooth' })
   }
 });
 

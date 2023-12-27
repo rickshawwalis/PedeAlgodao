@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,10 @@
     <script src="TelaInicial/plumaNuvem-Index.js " defer></script>
     <script src="TelaInicial/plumaStar-Index.js" defer></script>
     <script src="TelaInicial/plumaConfort-Index.js" defer></script>
+    <script src="TelaInicial/plumaKids-Index.js" defer></script>
+    <script src="TelaInicial/plumaPlataforma-Index.js" defer></script>
+    <script src="TelaInicial/plumaSaltinho-Index.js" defer></script>
+    <script src="TelaInicial/plumaMocassim-Index.js" defer></script>
 </head>
 
 <body>
@@ -23,8 +27,7 @@
         <img src="img-Index/PLUMANUVEM/plumanuvem.png" alt="" class="produto">
 
         <div class="produtos">
-            <button type="button" onclick="comprar()" class="adquirir" data-tex="PLUMA NUVEM"
-                value="120,00">VER MODELOS</button>
+            <button type="button" onclick="comprar()" class="adquirir">VER MODELOS</button>
         </div>
 
         <div id="mostrarTudo" style="display: none;">
@@ -59,7 +62,7 @@
 
             </div>
             <div class="botConcluinr">
-                <button type="button" class="concluir">
+                <button type="button" class="concluir" data-tex="PLUMA NUVEM" value="120,00">
                     CONCLUIR
                 </button>
             </div>
@@ -71,8 +74,7 @@
         <img src="img-Index/PLUMASTAR/plumastar.png" alt="" class="produto">
 
         <div class="produtos">
-            <button type="button" onclick="comprar1()" class="adquirir1" data-tex="PLUMA STAR"
-                value="180,00">VER MODELOS</button>
+            <button type="button" onclick="comprar1()" class="adquirir1">VER MODELOS</button>
         </div>
 
         <div id="mostrarTudo1" style="display: none;">
@@ -107,7 +109,7 @@
 
             </div>
             <div class="botConcluinr">
-                <button type="button" class="concluir1">
+                <button type="button" class="concluir1"  data-tex="PLUMA STAR" value="180,00">
                     CONCLUIR
                 </button>
             </div>
@@ -121,8 +123,7 @@
 <img src="img-Index/PLUMACONFORT/plumaconfort.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar2()" class="adquirir2" data-tex="PLUMA CONFORT"
-        value="120,00">VER MODELOS</button>
+    <button type="button" onclick="comprar2()" class="adquirir2">VER MODELOS</button>
 </div>
 
 <div id="mostrarTudo2" style="display: none;">
@@ -132,7 +133,7 @@
     <p><strong>COR</strong></p>
     <div id="cor">
         <button type="button" class="amareloouro2 cores2" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="azulbebe2 cores2" value="AZUL BEBE">AZUL BEBÊ</button>
+        <button type="button" class="azul2 cores2" value="AZUL BEBE">AZUL</button>
         <button type="button" class="azulmarinho2 cores2" value="AZUL MARINHO">AZUL MARINHO</button>
         <button type="button" class="branco2 cores2" value="BRANCA">BRANCA</button>
         <button type="button" class="marromclaro2 cores2" value="MARROM CLARO">MARROM CLARO</button>
@@ -153,7 +154,7 @@
         <button type="button" class="tamanhos2" value="39/40">39/40</button>
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir2">
+        <button type="button" class="concluir2" data-tex="PLUMA CONFORT" value="120,00">
             CONCLUIR
         </button>
     </div>
@@ -162,13 +163,12 @@
 
 
 <!--PLUMA KIDS-->
-<h1 class="tituloA  tituloA4">PLUMA CONFORT - R$ 120,00</h1>
+<h1 class="tituloA  tituloA4">PLUMA KIDS - R$ 120,00</h1>
 <p class="textoA1">Pensando também nas Crianças, a Pé de Pluma cria números menores que vai da numeração 25/26 ao 31/32, assim a diversão é garantida :)</p>
 <img src="img-Index/PLUMAKIDS/plumakids.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar3()" class="adquirir3" data-tex="PLUMA KIDS"
-        value="120,00">VER MODELOS</button>
+    <button type="button" onclick="comprar3()" class="adquirir3">VER MODELOS</button>
 </div>
 
 <div id="mostrarTudo3" style="display: none;">
@@ -177,15 +177,10 @@
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores3" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores3" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores3" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores3" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores3" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores3" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores3" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores3" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores3" value="VERDE">VERDE MILITAR</button>
+        <button type="button" class="neon3 cores3" value="NEON">NEON</button>
+        <button type="button" class="rosa3 cores3" value="ROSA">ROSA</button>
+        <button type="button" class="roxa3 cores3" value="ROXA">ROXA</button>
+        <button type="button" class="vermelhaclara3 cores3" value="VERMELHA CLARA">VERMELHA CLARA</button>
     </div>
 
     <div id="imagemSapato3"></div>
@@ -199,7 +194,7 @@
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir3">
+        <button type="button" class="concluir3" data-tex="PLUMA KIDS" value="120,00">
             CONCLUIR
         </button>
     </div>
@@ -212,8 +207,7 @@
 <img src="img-Index/PLUMAPLATAFORMA/plumaplataforma.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar4()" class="adquirir4" data-tex="PLUMA PLATAFORMA"
-        value="139,00">VER MODELOS</button>
+    <button type="button" onclick="comprar4()" class="adquirir4">VER MODELOS</button>
 </div>
 
 <div id="mostrarTudo4" style="display: none;">
@@ -222,15 +216,15 @@
 
     <p><strong>COR</strong></p>
     <div id="cor">
-        <button type="button" class="bege cores4" value="LILAS">LILÁS</button>
-        <button type="button" class="preto cores4" value="PRETO">PRETO</button>
-        <button type="button" class="amareloouro cores4" value="AMARELO OURO">AMARELO OURO</button>
-        <button type="button" class="laranja cores4" value="LARANJA">LARANJA</button>
-        <button type="button" class="rosabebe cores4" value="ROSA BEBE">ROSA BEBÊ</button>
-        <button type="button" class="branco cores4" value="BRANCO">BRANCO</button>
-        <button type="button" class="azulmarinho cores4" value="AZUL MARINHO">AZUL MARINHO</button>
-        <button type="button" class="azulclaro cores4" value="AZUL CLARO">AZUL CLARO</button>
-        <button type="button" class="verdemilitar cores4" value="VERDE">VERDE MILITAR</button>
+
+        <button type="button" class="azulbebe4 cores4" value="AZUL BEBE">AZUL BEBÊ</button>
+        <button type="button" class="branca4 cores4" value="BRANCA">BRANCA</button>
+        <button type="button" class="neon4 cores4" value="NEON">NEON</button>
+        <button type="button" class="nude4 cores4" value="NUDE">NUDE</button>
+        <button type="button" class="preta4 cores4" value="PRETA">PRETA</button> 
+        <button type="button" class="rosa4 cores4" value="ROSA">ROSA</button>
+        <button type="button" class="rosaescuro4 cores4" value="ROSA ESCURO">ROSA ESCURO</button>
+        <button type="button" class="roxo4 cores4" value="ROXO">ROXO</button>
     </div>
 
     <div id="imagemSapato4"></div>
@@ -244,7 +238,7 @@
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir4">
+        <button type="button" class="concluir4" data-tex="PLUMA PLATAFORMA" value="139,00">
             CONCLUIR
         </button>
     </div>
@@ -257,8 +251,7 @@
 <img src="img-Index/PLUMASALTINHO/plumasaltinho.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar5()" class="adquirir5" data-tex="PLUMA SALTINHO"
-        value="139,00">VER MODELOS</button>
+    <button type="button" onclick="comprar5()" class="adquirir5">VER MODELOS</button>
 </div>
 
 <div id="mostrarTudo5" style="display: none;">
@@ -290,7 +283,7 @@
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir">
+        <button type="button" class="concluir" data-tex="PLUMA SALTINHO" value="139,00">
             CONCLUIR
         </button>
     </div>
@@ -303,8 +296,7 @@
 <img src="img-Index/PLUMAMOCASSIM/plumamocassim.png" alt="" class="produto">
 
 <div class="produtos">
-    <button type="button" onclick="comprar6()" class="adquirir6" data-tex="PLUMA MOCASSIM"
-        value="139,00">VER MODELOS</button>
+    <button type="button" onclick="comprar6()" class="adquirir6">VER MODELOS</button>
 </div>
 
 <div id="mostrarTudo6" style="display: none;">
@@ -335,7 +327,7 @@
 
     </div>
     <div class="botConcluinr">
-        <button type="button" class="concluir6">
+        <button type="button" class="concluir6" data-tex="PLUMA MOCASSIM"  value="139,00">
             CONCLUIR
         </button>
     </div>

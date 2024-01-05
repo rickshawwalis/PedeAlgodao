@@ -27,8 +27,8 @@ const limparSelecoes = () => {
 
   
 //limpar opção de quantidade escolhida
-  let select = document.getElementById("opcoes");
-  select.value = "";
+  //let select = document.getElementById("opcoes");
+  //select.value = "";
 }
 
 //FECHAR

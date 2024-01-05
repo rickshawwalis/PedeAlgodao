@@ -1,8 +1,8 @@
 // PARTE PLUMA NUVEM
 //ABRE AS OPÇÕES DE CORES DE TAMANHOS
-const comprar = () => {
-  let adquirir = document.querySelector(".adquirir");
-  let mostrar = document.querySelector("#mostrarTudo");
+const comprar0 = () => {
+  let adquirir = document.querySelector(".adquirir0");
+  let mostrar = document.querySelector("#mostrarTudo0");
 
   if (adquirir) {
     mostrar.style.display = 'block';
@@ -32,7 +32,7 @@ const limparSelecoes = () => {
 }
 
 //FECHAR
-const cancelar = () => {
+const cancelar0 = () => {
   let tituloA = document.querySelector(".tituloA")
   let ocultar = document.querySelector(".cancelar");
   let mostrar = document.querySelector("#mostrarTudo");
@@ -132,7 +132,6 @@ document.addEventListener('click', (ev) => {
     todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
       botao.style.backgroundColor = "";
     });
-
     // Define a cor apenas para o botão clicado
     et.style.backgroundColor = "#61A2B0";
   }

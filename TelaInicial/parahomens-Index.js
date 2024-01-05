@@ -76,7 +76,7 @@ document.addEventListener('click', (e) => {
             el.style.backgroundColor = "black";
         }
         if (el.classList.contains("verdemilitar7")) {
-            imagem.src = './PedeAlgodao/img-Index/PARAHOMENS/verdemilitar.png';
+            imagem.src = '/PedeAlgodao/img-Index/PARAHOMENS/verdemilitar.png';
             el.style.backgroundColor = "#6F735C";
         }
         imagemSapato7.appendChild(imagem);

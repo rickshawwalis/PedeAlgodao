@@ -97,7 +97,7 @@ document.addEventListener('click', (e) => {
     }
     if (el.classList.contains("preta1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/img-Index/PLUMASTAR/preta.png';
+      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/preta.png';
       el.style.backgroundColor = "black";
     }
 

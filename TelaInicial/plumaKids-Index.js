@@ -69,7 +69,7 @@ const comprar3 = () => {
       }
       if (el.classList.contains("vermelhaclara3")) {
         imagem.src = '/PedeAlgodao/img-Index/PLUMAKIDS/vermelhoclaro.jpeg';
-        el.style.backgroundColor = "white";
+        el.style.backgroundColor = "#B83760";
       }
      
       imagemSapato3.appendChild(imagem);

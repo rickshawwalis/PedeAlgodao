@@ -1,8 +1,8 @@
 // PARTE PLUMA NUVEM
 //ABRE AS OPÇÕES DE CORES DE TAMANHOS
-const comprar0 = () => {
-  let adquirir = document.querySelector(".adquirir0");
-  let mostrar = document.querySelector("#mostrarTudo0");
+const comprar = () => {
+  let adquirir = document.querySelector(".adquirir");
+  let mostrar = document.querySelector("#mostrarTudo");
 
   if (adquirir) {
     mostrar.style.display = 'block';
@@ -32,7 +32,7 @@ const limparSelecoes = () => {
 }
 
 //FECHAR
-const cancelar0 = () => {
+const cancelar = () => {
   let tituloA = document.querySelector(".tituloA")
   let ocultar = document.querySelector(".cancelar");
   let mostrar = document.querySelector("#mostrarTudo");

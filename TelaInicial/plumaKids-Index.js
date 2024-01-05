@@ -61,7 +61,7 @@ const comprar3 = () => {
       }
       if (el.classList.contains("rosa3")) {
         imagem.src = '/PedeAlgodao/img-Index/PLUMAKIDS/rosa.jpeg';
-        el.style.backgroundColor = "#13C5FF";
+        el.style.backgroundColor = "#E29EAD";
       }
       if (el.classList.contains("roxa3")) {
         imagem.src = '/PedeAlgodao/img-Index/PLUMAKIDS/roxa.jpeg';

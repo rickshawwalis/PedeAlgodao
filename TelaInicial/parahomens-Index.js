@@ -79,13 +79,6 @@ document.addEventListener('click', (e) => {
             imagem.src = './PedeAlgodao/img-Index/PARAHOMENS/verdemilitar.png';
             el.style.backgroundColor = "#6F735C";
         }
-
-
-
-
-
-
-
         imagemSapato7.appendChild(imagem);
     }
 });

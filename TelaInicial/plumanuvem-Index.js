@@ -47,6 +47,8 @@ const cancelar = () => {
 //FAZ AS IMAGENS SURGIR
 document.addEventListener('click', (e) => {
   const el = e.target;
+
+  //cria a imagem
   let imagem = document.createElement('img');
   imagem.setAttribute("id", "fotosImagem");
   let imagemSapato = document.querySelector("#imagemSapato");
@@ -122,14 +124,17 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('click', (ev) => {
-  const todosBotoesTamanhos = document.querySelectorAll(".tamanhos");
-  todosBotoesTamanhos.forEach(botao => {
-    botao.style.backgroundColor = "";
-  });
-
   const et = ev.target;
+
   if (et.classList.contains("tamanhos")) {
+    const todosBotoesTamanhos = document.querySelectorAll(".tamanhos");
+
+    todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
+      botao.style.backgroundColor = "";
+    });
+
+    // Define a cor apenas para o botão clicado
     et.style.backgroundColor = "#61A2B0";
   }
-
 });
+

@@ -123,17 +123,18 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// document.addEventListener('click', (ev) => {
-//   const et = ev.target;
+//TAMANHOS
+document.addEventListener('click', (ev) => {
+  const et = ev.target;
 
-//   if (et.classList.contains("tamanhos")) {
-//     const todosBotoesTamanhos = document.querySelectorAll(".tamanhos");
+  if (et.classList.contains("tamanhos")) {
+    const todosBotoesTamanhos = document.querySelectorAll(".tamanhos");
 
-//     todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
-//       botao.style.backgroundColor = "";
-//     });
-//     // Define a cor apenas para o botão clicado
-//     et.style.backgroundColor = "#61A2B0";
-//   }
-// });
+    todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
+      botao.style.backgroundColor = "";
+    });
+    // Define a cor apenas para o botão clicado
+    et.style.backgroundColor = "#61A2B0";
+  }
+});
 

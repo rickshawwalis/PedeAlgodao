@@ -104,16 +104,17 @@ const comprar2 = () => {
     }
   });
   
-  document.addEventListener('click', (ev) => {
+//TAMANHOS
+document.addEventListener('click', (ev) => {
+  const et = ev.target;
+
+  if (et.classList.contains("tamanhos2")) {
     const todosBotoesTamanhos = document.querySelectorAll(".tamanhos2");
-    todosBotoesTamanhos.forEach(botao => {
+
+    todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
       botao.style.backgroundColor = "";
     });
-  
-    const et = ev.target;
-    if (et.classList.contains("tamanhos2")) {
-      et.style.backgroundColor = "#61A2B0";
-    }
-  
-  });
-  
+    // Define a cor apenas para o botão clicado
+    et.style.backgroundColor = "#61A2B0";
+  }
+});

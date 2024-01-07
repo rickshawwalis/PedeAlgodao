@@ -92,15 +92,17 @@ document.addEventListener('click', (e) => {
     }
 });
 
+//TAMANHOS
 document.addEventListener('click', (ev) => {
-    const todosBotoesTamanhos = document.querySelectorAll(".tamanhos4");
-    todosBotoesTamanhos.forEach(botao => {
-        botao.style.backgroundColor = "";
-    });
-
     const et = ev.target;
+  
     if (et.classList.contains("tamanhos4")) {
-        et.style.backgroundColor = "#61A2B0";
+      const todosBotoesTamanhos = document.querySelectorAll(".tamanhos4");
+  
+      todosBotoesTamanhos.forEach(botao => {// Retira a cor quando clicado em outra
+        botao.style.backgroundColor = "";
+      });
+      // Define a cor apenas para o botão clicado
+      et.style.backgroundColor = "#61A2B0";
     }
-
-});
+  });

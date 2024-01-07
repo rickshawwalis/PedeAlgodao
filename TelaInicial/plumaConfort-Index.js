@@ -26,7 +26,7 @@ const comprar2 = () => {
     imagemSapato1.innerHTML = "";
 
      //limpar opção de quantidade escolhida
-     let select = document.getElementById("opcoes");
+     let select = document.getElementById("opcoes2");
      select.value = "";
   }
   

@@ -26,7 +26,7 @@ const limparSelecoes4 = () => {
     imagemSapato3.innerHTML = "";
 
      //limpar opção de quantidade escolhida
-     let select = document.getElementById("opcoes");
+     let select = document.getElementById("opcoes4");
      select.value = "";
 }
 

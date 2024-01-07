@@ -24,6 +24,10 @@ const limparSelecoes5 = () => {
 
     let imagemSapato5 = document.querySelector("#imagemSapato5");
     imagemSapato5.innerHTML = "";
+
+     //limpar opção de quantidade escolhida
+     let select = document.getElementById("opcoes");
+     select.value = "";
 }
 
 //FECHAR

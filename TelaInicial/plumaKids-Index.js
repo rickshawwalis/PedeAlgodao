@@ -24,6 +24,10 @@ const comprar3 = () => {
   
     let imagemSapato3 = document.querySelector("#imagemSapato3");
     imagemSapato3.innerHTML = "";
+
+     //limpar opção de quantidade escolhida
+     let select = document.getElementById("opcoes");
+     select.value = "";
   }
   
   //FECHAR

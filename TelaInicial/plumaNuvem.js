@@ -138,14 +138,29 @@ document.addEventListener('click', (ev) => {
   }
 });
 
-
 const concluirCompra = () => {
   const botaoModelos = document.querySelectorAll(".cores");
+  const botaoTamanhos = document.querySelectorAll(".tamanhos");
+  const botaoEnviar = document.querySelector(".concluir");
 
-  botaoModelos.forEach(botao => {
-    botao.addEventListener("change", () => {
-      const valorModelo = botao.value;
+  // Ajuste se necessário, dependendo da estrutura do HTML
+  const valorBotaoEnviar = botaoEnviar.value;
+  sessionStorage.setItem('escolhaProduto', valorBotaoEnviar);
+
+  botaoModelos.forEach(modelo => {
+    modelo.addEventListener("click", () => {
+      const valorModelo = modelo.value;
       sessionStorage.setItem('escolhaModelo', valorModelo);
     });
   });
+
+  botaoTamanhos.forEach(tamanho => {
+    tamanho.addEventListener("click", () => {
+      const valorTamanho = tamanho.value;
+      sessionStorage.setItem('escolhaTamanho', valorTamanho);
+    });
+  });
+
+  // Redireciona para a página do carrinho
+  window.location.href = '/CARRINHO/carrinho.html';
 };

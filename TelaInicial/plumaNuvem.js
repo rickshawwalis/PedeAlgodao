@@ -147,15 +147,16 @@ const concluirCompra = () => {
 
   if (botaoEnviar && botaoModelos && botaoTamanhos) {
 
+    //Os dados de Nome modelo e valor estão no botao concluir
     const valorBotaoEnviar = parseFloat(botaoEnviar.value);
     const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-    sessionStorage.setItem('escolhaProduto', valorBotaoEnviar);
-    sessionStorage.setItem('escolhaTexto', textoBotaoEnviar);
+    sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+    sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
 
-    botaoModelos.forEach(modelo => {
-      modelo.addEventListener("click", () => {
-        const valorModelo = modelo.value;
-        sessionStorage.setItem('escolhaModelo', valorModelo);
+    botaoModelos.forEach(corModelos => {
+      corModelos.addEventListener("click", () => {
+        const corModelo = corModelos.value;
+        sessionStorage.setItem('escolhaCor', corModelo);
       });
     });
 

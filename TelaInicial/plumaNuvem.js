@@ -141,30 +141,35 @@ document.addEventListener('click', (ev) => {
 
 //envia os dados dos produtos elecionados na compra
 const concluirCompra = () => {
-
   const botaoEnviar = document.querySelector(".concluir");
-  const valorBotaoEnviar = parseFloat(botaoEnviar.value);
-  const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-  sessionStorage.setItem('escolhaProduto', valorBotaoEnviar);
-  sessionStorage.setItem('escolhaTexto', textoBotaoEnviar);
-  
-
   const botaoModelos = document.querySelectorAll(".cores");
-  botaoModelos.forEach(modelo => {
-    modelo.addEventListener("click", () => {
-      const valorModelo = modelo.value;
-      sessionStorage.setItem('escolhaModelo', valorModelo);
-    });
-  });
-
   const botaoTamanhos = document.querySelectorAll(".tamanhos");
-  botaoTamanhos.forEach(tamanho => {
-    tamanho.addEventListener("click", () => {
-      const valorTamanho = tamanho.value;
-      sessionStorage.setItem('escolhaTamanho', valorTamanho);
-    });
-  });
 
-  // Redireciona para a página do carrinho
-  window.location.href = '/CARRINHO/carrinho.html';
+  if (botaoEnviar && botaoModelos && botaoTamanhos) {
+
+    const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+    const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
+    sessionStorage.setItem('escolhaProduto', valorBotaoEnviar);
+    sessionStorage.setItem('escolhaTexto', textoBotaoEnviar);
+
+    botaoModelos.forEach(modelo => {
+      modelo.addEventListener("click", () => {
+        const valorModelo = modelo.value;
+        sessionStorage.setItem('escolhaModelo', valorModelo);
+      });
+    });
+
+    botaoTamanhos.forEach(tamanho => {
+      tamanho.addEventListener("click", () => {
+        const valorTamanho = tamanho.value;
+        sessionStorage.setItem('escolhaTamanho', valorTamanho);
+      });
+    });
+
+    // Redireciona para a página do carrinho
+    window.location.href = '/CARRINHO/carrinho.html';
+  } else {
+    alert('Por favor, selecione adequadamente o Modelo, Cor e Quantidade a ser comprada.');
+    return
+  }
 };

@@ -139,14 +139,15 @@ document.addEventListener('click', (ev) => {
 });
 
 const concluirCompra = () => {
-  const botaoModelos = document.querySelectorAll(".cores");
-  const botaoTamanhos = document.querySelectorAll(".tamanhos");
+
   const botaoEnviar = document.querySelector(".concluir");
-
-  // Ajuste se necessário, dependendo da estrutura do HTML
-  const valorBotaoEnviar = botaoEnviar.value;
+  const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+  const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
   sessionStorage.setItem('escolhaProduto', valorBotaoEnviar);
+  sessionStorage.setItem('escolhaTexto', textoBotaoEnviar);
+  
 
+  const botaoModelos = document.querySelectorAll(".cores");
   botaoModelos.forEach(modelo => {
     modelo.addEventListener("click", () => {
       const valorModelo = modelo.value;
@@ -154,6 +155,7 @@ const concluirCompra = () => {
     });
   });
 
+  const botaoTamanhos = document.querySelectorAll(".tamanhos");
   botaoTamanhos.forEach(tamanho => {
     tamanho.addEventListener("click", () => {
       const valorTamanho = tamanho.value;

@@ -138,6 +138,8 @@ document.addEventListener('click', (ev) => {
   }
 });
 
+
+//envia os dados dos produtos elecionados na compra
 const concluirCompra = () => {
 
   const botaoEnviar = document.querySelector(".concluir");

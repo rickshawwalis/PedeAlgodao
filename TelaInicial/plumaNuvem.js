@@ -167,8 +167,16 @@ const concluirCompra = () => {
       });
     });
 
+    // Trabalha a opção escolhida
+document.getElementById('opcoes').addEventListener('change', function() {
+
+  const opcaoEscolhida = this.value;
+  sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+});
+
+
     // Redireciona para a página do carrinho
-    window.location.href = '/CARRINHO/carrinho.html';
+    window.location.href = '/CARRINHO/comprasFeitas.html';
   } else {
     alert('Por favor, selecione adequadamente o Modelo, Cor e Quantidade a ser comprada.');
     return

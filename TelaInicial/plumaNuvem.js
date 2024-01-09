@@ -184,13 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       //Ouvinte de evento para o botão "Concluir"
-      document.addEventListener("DOMContentLoaded", () => {
-        window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      });
+      // botaoEnviar.addEventListener("click", () => {
+      
+      // });
     }
-    
+    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   };
   document.querySelector('.concluir').addEventListener("click",  concluirCompra)
+
 })
 
 // Chama a função quando a página estiver pronta

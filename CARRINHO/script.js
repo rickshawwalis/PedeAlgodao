@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function enviarZap() {
         const textoParaEnviar = `
     *PRODUTO:* ${nomeModelo}
-    \n*VALOR:* ${valorModelo}
+    \n*VALOR:* R$ ${valorModelo}
 
     \n*COR:* ${cor}
     \n*TAMANHO:* ${tamanho}

@@ -143,7 +143,7 @@ document.addEventListener('click', (ev) => {
 //envia os dados dos produtos elecionados na compra
 const concluirCompra = () => {
   const botaoEnviar = document.querySelector(".concluir");
-  const botaoModelos = document.querySelectorAll(".cores");
+
   const botaoTamanhos = document.querySelectorAll(".tamanhos");
 
   // Dados do botão "Concluir"
@@ -153,6 +153,7 @@ const concluirCompra = () => {
   sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
 
   // Ouvinte de evento para os botões de modelos (cores)
+  const botaoModelos = document.querySelectorAll(".cores");
   botaoModelos.forEach(corModelos => {
     corModelos.addEventListener("click", () => {
       const corModelo = corModelos.value;

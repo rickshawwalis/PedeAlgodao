@@ -184,15 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       //Ouvinte de evenxto para o botão "Concluir"
-      botaoEnviar.addEventListener("click", () => {
+     // botaoEnviar.addEventListener("click", () => {
         window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      });
- //   document.addEventListener('DOMContentLoaded', concluirCompra);
+     // });
+
   };
   document.querySelector('.concluir').addEventListener("click", concluirCompra)
+  
 })
 
-
+concluirCompra()
 
 
 

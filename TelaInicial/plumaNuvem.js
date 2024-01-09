@@ -145,7 +145,7 @@ const concluirCompra = () => {
   const botaoModelos = document.querySelectorAll(".cores");
   const botaoTamanhos = document.querySelectorAll(".tamanhos");
 
-  if (botaoEnviar && botaoModelos && botaoTamanhos) {
+
 
     //Os dados de Nome modelo e valor estão no botao concluir
     const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -177,9 +177,5 @@ document.getElementById('opcoes').addEventListener('change', function() {
 
     // Redireciona para a página do carrinho
     window.location.href = '/CARRINHO/comprasFeitas.html';
-  } else {
-    alert('Por favor, selecione adequadamente o Modelo, Cor e Quantidade a ser comprada.');
-    return
-  }
-};
+}
 

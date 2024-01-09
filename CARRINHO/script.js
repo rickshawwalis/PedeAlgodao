@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // const quantidade
 
     document.querySelector('#nomeproduto').innerHTML = `
-<span style="font-weight: bold;">PRODUTO:</span> ${nomeModelo}-  <span style="font-weight: bold;"> R$</span> ${valorModelo}
+<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo}-  <span style="font-weight: bold;"> R$</span> ${valorModelo}
     `;
 
     document.querySelector('#cor').innerHTML = `
-    <span style="font-weight: bold;"> COR:</span> ${cor}
+    <span style="font-weight: bold;"> COR: </span> ${cor}
     `;
 
     document.querySelector('#tamanho').innerHTML = `
-    <span style="font-weight: bold;">TAMANHO:</span> ${tamanho}
+    <span style="font-weight: bold;">TAMANHO: </span> ${tamanho}
     `;
 
     document.querySelector('#quantidade').innerHTML = `
-    <span style="font-weight: bold;"> QUANTIDADE:</span> ${quantidade}
+    <span style="font-weight: bold;"> QUANTIDADE: </span> ${quantidade}
     `
 });

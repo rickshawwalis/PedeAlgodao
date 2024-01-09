@@ -139,43 +139,51 @@ document.addEventListener('click', (ev) => {
 });
 
 
+
+
+
+
 //envia os dados dos produtos elecionados na compra
 const concluirCompra = () => {
   const botaoEnviar = document.querySelector(".concluir");
   const botaoModelos = document.querySelectorAll(".cores");
   const botaoTamanhos = document.querySelectorAll(".tamanhos");
 
+  // Dados do botão "Concluir"
+  const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+  const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
+  sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+  sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
 
-
-    //Os dados de Nome modelo e valor estão no botao concluir
-    const valorBotaoEnviar = parseFloat(botaoEnviar.value);
-    const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
-
-    botaoModelos.forEach(corModelos => {
-      corModelos.addEventListener("click", () => {
-        const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
-      });
+  // Ouvinte de evento para os botões de modelos (cores)
+  botaoModelos.forEach(corModelos => {
+    corModelos.addEventListener("click", () => {
+      const corModelo = corModelos.value;
+      sessionStorage.setItem('escolhaCor', corModelo);
     });
+  });
 
-    botaoTamanhos.forEach(tamanho => {
-      tamanho.addEventListener("click", () => {
-        const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
-      });
+  // Ouvinte de evento para os botões de tamanhos
+  botaoTamanhos.forEach(tamanho => {
+    tamanho.addEventListener("click", () => {
+      const valorTamanho = tamanho.value;
+      sessionStorage.setItem('escolhaTamanho', valorTamanho);
     });
+  });
 
-    // Trabalha a opção escolhida
-document.getElementById('opcoes').addEventListener('change', function() {
+  // Ouvinte de evento para a opção de quantidade
+  document.getElementById('opcoes').addEventListener('change', function () {
+    const opcaoEscolhida = this.value;
+    sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+  });
 
-  const opcaoEscolhida = this.value;
-  sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+//Ouvinte de evento para o botão "Concluir"
+botaoEnviar.addEventListener("click", () => {
+  window.location.href = '/CARRINHO/comprasFeitas.html';
 });
+};
 
+// Chama a função quando a página estiver pronta
+document.addEventListener('DOMContentLoaded', concluirCompra);
 
-    // Redireciona para a página do carrinho
-    window.location.href = '/CARRINHO/comprasFeitas.html';
-}
 

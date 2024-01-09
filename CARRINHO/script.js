@@ -21,4 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quantidade').innerHTML = `
     <span style="font-weight: bold;"> QUANTIDADE: </span> ${quantidade}
     `
+
+    function enviarZap() {
+        const textoParaEnviar = `
+    *PRODUTO:* ${nomeModelo}
+    \n*VALOR:* ${valorModelo}
+
+    \n*COR:* ${cor}
+    \n*TAMANHO:* ${tamanho}
+    \n*QUANTIDADE:* ${quantidade}
+    `
+        const codigoPais = '55';
+        const numeroTelefone = '87991614277';
+
+        const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
+        window.open(linkWhatsApp, '_blank');
+    }
+
+    let botaoFinalizar = document.querySelector("#finalizar") //ativa o botão de enviar os dados via zap
+    botaoFinalizar.addEventListener("click", enviarZap)
 });
+

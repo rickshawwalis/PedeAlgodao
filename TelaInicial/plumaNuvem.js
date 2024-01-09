@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
-    } else {
+    }
       // Dados do botão "Concluir"
       const botaoEnviar = document.querySelector(".concluir");
       const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -184,11 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       //Ouvinte de evenxto para o botão "Concluir"
-      // botaoEnviar.addEventListener("click", () => {
-      
-      // });
-    }
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      botaoEnviar.addEventListener("click", () => {
+        window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      });
+
   };
   document.querySelector('.concluir').addEventListener("click",  concluirCompra)
 

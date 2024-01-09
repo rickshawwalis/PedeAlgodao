@@ -190,10 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
   document.querySelector('.concluir').addEventListener("click", concluirCompra)
-  
 })
 
-concluirCompra()
 
+concluirCompra()
 
 

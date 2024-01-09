@@ -188,14 +188,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
       });
     }
-    
+
   };
-  document.querySelector('.concluir').addEventListener("click",  concluirCompra)
+  document.querySelector('.concluir').addEventListener("click", concluirCompra)
+  document.addEventListener('DOMContentLoaded', concluirCompra);
 
 })
 
-// Chama a função quando a página estiver pronta
-document.addEventListener('DOMContentLoaded', concluirCompra);
 
 
 

@@ -176,7 +176,7 @@ const concluirCompra = () => {
 
 //Ouvinte de evento para o botão "Concluir"
 botaoEnviar.addEventListener("click", () => {
-  window.location.href = './CARRINHO/comprasFeitas.html';
+  window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
 });
 };
 

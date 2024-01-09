@@ -143,6 +143,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   const concluirCompra = () => {
+
     const coresSelecionadas = document.querySelector('.cores:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos:active');
     const opcaoSelecionada = document.getElementById('opcoes').value;
@@ -151,49 +152,45 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
+      // Dados do botão "Concluir"
+      const botaoEnviar = document.querySelector(".concluir");
+      const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+      const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
+      sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+      sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
 
-    // Dados do botão "Concluir"
-    const botaoEnviar = document.querySelector(".concluir");
-    const valorBotaoEnviar = parseFloat(botaoEnviar.value);
-    const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
-
-    // Ouvinte de evento para os botões de modelos (cores)
-    const botaoModelos = document.querySelectorAll(".cores");
-    botaoModelos.forEach(corModelos => {
-      corModelos.addEventListener("click", () => {
-        const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
+      // Ouvinte de evento para os botões de modelos (cores)
+      const botaoModelos = document.querySelectorAll(".cores");
+      botaoModelos.forEach(corModelos => {
+        corModelos.addEventListener("click", () => {
+          const corModelo = corModelos.value;
+          sessionStorage.setItem('escolhaCor', corModelo);
+        });
       });
-    });
 
-    // Ouvinte de evento para os botões de tamanhos
-    const botaoTamanhos = document.querySelectorAll(".tamanhos");
-    botaoTamanhos.forEach(tamanho => {
-      tamanho.addEventListener("click", () => {
-        const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
+      // Ouvinte de evento para os botões de tamanhos
+      const botaoTamanhos = document.querySelectorAll(".tamanhos");
+      botaoTamanhos.forEach(tamanho => {
+        tamanho.addEventListener("click", () => {
+          const valorTamanho = tamanho.value;
+          sessionStorage.setItem('escolhaTamanho', valorTamanho);
+        });
       });
-    });
 
-    // Ouvinte de evento para a opção de quantidade
-    document.getElementById('opcoes').addEventListener('change', function () {
-      const opcaoEscolhida = this.value;
-      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-    });
+      // Ouvinte de evento para a opção de quantidade
+      document.getElementById('opcoes').addEventListener('change', function () {
+        const opcaoEscolhida = this.value;
+        sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+      });
+
+      //Ouvinte de evenxto para o botão "Concluir"
+      botaoEnviar.addEventListener("click", () => {
+        window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      });
+   
   };
-
-  // Ouvinte de evento para o botão "Concluir" com o redirecionamento
-  document.querySelector('.concluir').addEventListener("click", function () {
-    concluirCompra();
-
-    var tempoDeAtraso = 2000;
-    setTimeout(function () {
-      window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    }, tempoDeAtraso);
-  });
-});
+  document.querySelector('.concluir').addEventListener("click",  concluirCompra)
+})
 
 // Chama a função quando a página estiver pronta
 //document.addEventListener('DOMContentLoaded', concluirCompra);

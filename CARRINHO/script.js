@@ -25,11 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function enviarZap() {
         const textoParaEnviar = `
     *PRODUTO:* ${nomeModelo}
-    \n*VALOR:* R$ ${valorModelo}
-
-    \n*COR:* ${cor}
-    \n*TAMANHO:* ${tamanho}
-    \n*QUANTIDADE:* ${quantidade}
+    *VALOR:* R$ ${valorModelo}
+    *COR:* ${cor}
+    *TAMANHO:* ${tamanho}
+    *QUANTIDADE:* ${quantidade}
     `
         const codigoPais = '55';
         const numeroTelefone = '87991614277';

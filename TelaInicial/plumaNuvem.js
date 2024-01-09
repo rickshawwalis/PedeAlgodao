@@ -143,7 +143,6 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   const concluirCompra = () => {
-
     const coresSelecionadas = document.querySelector('.cores:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos:active');
     const opcaoSelecionada = document.getElementById('opcoes').value;
@@ -152,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
+
     // Dados do botão "Concluir"
     const botaoEnviar = document.querySelector(".concluir");
     const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -182,20 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const opcaoEscolhida = this.value;
       sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
     });
-
-    //Ouvinte de evenxto para o botão "Concluir"
-    // botaoEnviar.addEventListener("click", () => {
-    // window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    // });
-
-
   };
-  document.querySelector('.concluir').addEventListener("click", concluirCompra)
-  var tempoDeAtraso = 2000;
-  setTimeout(function () {
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-  }, tempoDeAtraso);
-})
+
+  // Ouvinte de evento para o botão "Concluir" com o redirecionamento
+  document.querySelector('.concluir').addEventListener("click", function () {
+    concluirCompra();
+
+    var tempoDeAtraso = 2000;
+    setTimeout(function () {
+      window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    }, tempoDeAtraso);
+  });
+});
 
 // Chama a função quando a página estiver pronta
 //document.addEventListener('DOMContentLoaded', concluirCompra);

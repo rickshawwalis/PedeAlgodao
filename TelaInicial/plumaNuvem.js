@@ -190,9 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   };
-  document.querySelector('.concluir').addEventListener("click", () => {
-    concluirCompra();
-  });
+  document.querySelector('.concluir').addEventListener("click",  concluirCompra)
 
 })
 

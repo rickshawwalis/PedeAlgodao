@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
-    } 
+    } else{
       // Dados do botão "Concluir"
       const botaoEnviar = document.querySelector(".concluir");
       const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -165,8 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
         corModelos.addEventListener("click", () => {
           const corModelo = corModelos.value;
           sessionStorage.setItem('escolhaCor', corModelo);
-        });
-      });
+        })
+      })
 
       // Ouvinte de evento para os botões de tamanhos
       const botaoTamanhos = document.querySelectorAll(".tamanhos");
@@ -174,21 +174,22 @@ document.addEventListener('DOMContentLoaded', () => {
         tamanho.addEventListener("click", () => {
           const valorTamanho = tamanho.value;
           sessionStorage.setItem('escolhaTamanho', valorTamanho);
-        });
-      });
+        })
+      })
 
       // Ouvinte de evento para a opção de quantidade
       document.getElementById('opcoes').addEventListener('change', function () {
         const opcaoEscolhida = this.value;
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-      });
+      })
 
       //Ouvinte de evenxto para oo botão "Concluir"
       botaoEnviar.addEventListener("click", () => {
         window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      });
+      })
  //   document.addEventListener('DOMContentLoaded', concluirCompra);
-  };
+  }
+}
   document.querySelector('.concluir').addEventListener("click", concluirCompra)
 })
 

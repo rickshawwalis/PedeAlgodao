@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // const quantidade
 
     document.querySelector('#nomeproduto').innerHTML = `
-<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo}-  <span style="font-weight: bold;"> R$</span> ${valorModelo}
+<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo} - <span style="font-weight: bold;"> VALOR R$</span> ${valorModelo}
     `;
 
     document.querySelector('#cor').innerHTML = `

@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       });
 
-      //Ouvinte de evento para o botão "Concluir"
+      //Ouvinte de evenxto para o botão "Concluir"
       // botaoEnviar.addEventListener("click", () => {
       
       // });

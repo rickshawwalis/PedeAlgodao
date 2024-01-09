@@ -143,8 +143,9 @@ document.addEventListener('click', (ev) => {
 //envia os dados dos produtos elecionados na compra
 const concluirCompra = () => {
   const botaoEnviar = document.querySelector(".concluir");
-
+  const botaoModelos = document.querySelectorAll(".cores");
   const botaoTamanhos = document.querySelectorAll(".tamanhos");
+  const opcao = document.querySelector("#opcoes");
 
   // Dados do botão "Concluir"
   const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -152,33 +153,36 @@ const concluirCompra = () => {
   sessionStorage.setItem('valorProduto', valorBotaoEnviar);
   sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
 
-  // Ouvinte de evento para os botões de modelos (cores)
-  const botaoModelos = document.querySelectorAll(".cores");
-  botaoModelos.forEach(corModelos => {
-    corModelos.addEventListener("click", () => {
-      const corModelo = corModelos.value;
-      sessionStorage.setItem('escolhaCor', corModelo);
+
+  if (botaoTamanhos && botaoModelos && opcao) {
+    // Ouvinte de evento para os botões de modelos (cores)
+    botaoModelos.forEach(corModelos => {
+      corModelos.addEventListener("click", () => {
+        const corModelo = corModelos.value;
+        sessionStorage.setItem('escolhaCor', corModelo);
+      });
     });
-  });
 
-  // Ouvinte de evento para os botões de tamanhos
-  botaoTamanhos.forEach(tamanho => {
-    tamanho.addEventListener("click", () => {
-      const valorTamanho = tamanho.value;
-      sessionStorage.setItem('escolhaTamanho', valorTamanho);
+    // Ouvinte de evento para os botões de tamanhos
+    botaoTamanhos.forEach(tamanho => {
+      tamanho.addEventListener("click", () => {
+        const valorTamanho = tamanho.value;
+        sessionStorage.setItem('escolhaTamanho', valorTamanho);
+      });
     });
-  });
 
-  // Ouvinte de evento para a opção de quantidade
-  document.getElementById('opcoes').addEventListener('change', function () {
-    const opcaoEscolhida = this.value;
-    sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-  });
-
-//Ouvinte de evento para o botão "Concluir"
-botaoEnviar.addEventListener("click", () => {
-  window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-});
+    // Ouvinte de evento para a opção de quantidade
+    document.getElementById('opcoes').addEventListener('change', function () {
+      const opcaoEscolhida = this.value;
+      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+    });
+    //Ouvinte de evento para o botão "Concluir"
+    botaoEnviar.addEventListener("click", () => {
+      window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    });
+  } else {
+    alert("Preencha")
+  }
 };
 
 // Chama a função quando a página estiver pronta

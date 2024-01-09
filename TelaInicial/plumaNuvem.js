@@ -185,10 +185,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       //Ouvinte de evenxto para o botão "Concluir"
       // botaoEnviar.addEventListener("click", () => {
-      
+       // window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
       // });
     
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      var tempoDeAtraso = 2000;
+      setTimeout(function() {
+          window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      }, tempoDeAtraso);
   };
   document.querySelector('.concluir').addEventListener("click",  concluirCompra)
 })

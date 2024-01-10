@@ -144,14 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const concluirCompra = () => {
 
-    const coresSelecionadas = document.querySelector('.cores:active');
-    const tamanhoSelecionado = document.querySelector('.tamanhos:active');
-    const opcaoSelecionada = document.getElementById('opcoes').value;
+    // const coresSelecionadas = document.querySelector('.cores:active');
+    // const tamanhoSelecionado = document.querySelector('.tamanhos:active');
+    // const opcaoSelecionada = document.getElementById('opcoes').value;
 
-    if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
-      alert("Para prosseguir, escolha: cor, tamanho e quantidade");
-      return false;
-    }
+    // if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
+    //   alert("Para prosseguir, escolha: cor, tamanho e quantidade");
+    //   return false;
+    // }
       // Dados do botão "Concluir"
       const botaoEnviar = document.querySelector(".concluir");
       const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-// Chama a função quanndo a página estiver pronta
+// Chama a função quando a página estiver pronta
 document.addEventListener('DOMContentLoaded', concluirCompra);
 
 

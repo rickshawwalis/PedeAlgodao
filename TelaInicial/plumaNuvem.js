@@ -189,8 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/CARRINHO/comprasFeitas.html';
       // }); 
   }
-  const botaoEnviar = document.querySelector(".concluir");
-  botaoEnviar.addEventListener("click", concluirCompra)
+  document.querySelector(".concluir").addEventListener("click", concluirCompra)
   //document.addEventListener('DOMContentLoaded', concluirCompra);
 })
 

@@ -138,12 +138,44 @@ document.addEventListener('click', (ev) => {
   }
 });
 
-
-//envia os dados dos produtos elecionados na compra
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Lógica para definir valores no sessionStorage
+  const definirValoresSessionStorage = () => {
+    // Dados do botão "Concluir"
+    const botaoEnviar = document.querySelector(".concluir");
+    const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+    const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
+    sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+    sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
+
+    // Ouvinte de evento para os botões de modelos (cores)
+    const botaoModelos = document.querySelectorAll(".cores");
+    botaoModelos.forEach(corModelos => {
+      corModelos.addEventListener("click", () => {
+        const corModelo = corModelos.value;
+        sessionStorage.setItem('escolhaCor', corModelo);
+      })
+    })
+
+    // Ouvinte de evento para os botões de tamanhos
+    const botaoTamanhos = document.querySelectorAll(".tamanhos");
+    botaoTamanhos.forEach(tamanho => {
+      tamanho.addEventListener("click", () => {
+        const valorTamanho = tamanho.value;
+        sessionStorage.setItem('escolhaTamanho', valorTamanho);
+      })
+    })
+
+    // Ouvinte de evento para a opção de quantidade
+    document.getElementById('opcoes').addEventListener('change', function () {
+      const opcaoEscolhida = this.value;
+      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+    })
+  }
+
   const concluirCompra = () => {
-//estrutura para usar a condição de obrigar escolher cor, tamanho e opção
+    //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos:active');
     const opcaoSelecionada = document.getElementById('opcoes').value;
@@ -152,48 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
-      // Dados do botão "Concluir"
-      const botaoEnviar = document.querySelector(".concluir");
-      const valorBotaoEnviar = parseFloat(botaoEnviar.value);
-      const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
-
-      // Ouvinte de evento para os botões de modelos (cores)
-      const botaoModelos = document.querySelectorAll(".cores");
-      botaoModelos.forEach(corModelos => {
-        corModelos.addEventListener("click", () => {
-          const corModelo = corModelos.value;
-          sessionStorage.setItem('escolhaCor', corModelo);
-        })
-      })
-
-      // Ouvinte de evento para os botões de tamanhos
-      const botaoTamanhos = document.querySelectorAll(".tamanhos");
-      botaoTamanhos.forEach(tamanho => {
-        tamanho.addEventListener("click", () => {
-          const valorTamanho = tamanho.value;
-          sessionStorage.setItem('escolhaTamanho', valorTamanho);
-        })
-      })
-
-      // Ouvinte de evento para a opção de quantidade
-      document.getElementById('opcoes').addEventListener('change', function () {
-        const opcaoEscolhida = this.value;
-        sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-      })
-
-      //Ouvinte de evenxto para oo botão "Concluir" e salvar os dados antes de passar para a proxima pagina do sistema
-      // botaoEnviar.addEventListener("click", () => {
-        //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-        window.location.href = '/CARRINHO/comprasFeitas.html';
-      // }); 
+    // Redirecionar para a próxima página
+    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
+  definirValoresSessionStorage();
   document.querySelector(".concluir").addEventListener("click", concluirCompra)
-  //document.addEventListener('DOMContentLoaded', concluirCompra);
-})
-
-
-
-
+});
 

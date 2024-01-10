@@ -143,7 +143,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   const concluirCompra = () => {
-
+//estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos:active');
     const opcaoSelecionada = document.getElementById('opcoes').value;
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
-    } else {
+    }
       // Dados do botão "Concluir"
       const botaoEnviar = document.querySelector(".concluir");
       const valorBotaoEnviar = parseFloat(botaoEnviar.value);
@@ -183,12 +183,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       })
 
-      //Ouvinte de evenxto para oo botão "Concluir"
+      //Ouvinte de evenxto para oo botão "Concluir" e salvar os dados antes de passar para a proxima pagina do sistema
       botaoEnviar.addEventListener("click", () => {
         window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
       });
       //   document.addEventListener('DOMContentLoaded', concluirCompra);
-    }
+ 
   }
   const botaoEnviar = document.querySelector(".concluir");
   botaoEnviar.addEventListener("click", concluirCompra)

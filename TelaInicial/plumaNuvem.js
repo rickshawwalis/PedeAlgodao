@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const botaoEnviar = document.querySelector(".concluir");
   botaoEnviar.addEventListener("click", concluirCompra)
-
+  //document.addEventListener('DOMContentLoaded', concluirCompra);
 })
 
 

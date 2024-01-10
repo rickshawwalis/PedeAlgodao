@@ -190,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
   document.querySelector('.concluir').addEventListener("click",  concluirCompra)
-
 })
 
 // Chama a função quando a página estiver pronta

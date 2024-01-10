@@ -186,12 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
       //Ouvinte de evenxto para oo botão "Concluir" e salvar os dados antes de passar para a proxima pagina do sistema
       botaoEnviar.addEventListener("click", () => {
         window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      });
-      //   document.addEventListener('DOMContentLoaded', concluirCompra);
- 
+      }); 
   }
   const botaoEnviar = document.querySelector(".concluir");
   botaoEnviar.addEventListener("click", concluirCompra)
+
+  document.addEventListener('DOMContentLoaded', concluirCompra);
 })
 
 

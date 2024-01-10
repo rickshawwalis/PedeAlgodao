@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-// Chama a função quando a página estiver pronta
+// Chama a função quanndo a página estiver pronta
 document.addEventListener('DOMContentLoaded', concluirCompra);
 
 

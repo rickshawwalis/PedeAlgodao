@@ -108,11 +108,11 @@ document.addEventListener('click', (ev) => {
     // Lógica para definir valores no sessionStorage
     const definirValoresSessionStorage = () => {
       // Dados do botão "Concluir"
-      const botaoEnviar = document.querySelector(".concluir7");
-      const valorBotaoEnviar = parseFloat(botaoEnviar.value);
-      const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
+      const botaoEnviar7 = document.querySelector(".concluir7");
+      const valorBotaoEnviar7 = parseFloat(botaoEnviar7.value);
+      const textoBotaoEnviar7 = botaoEnviar7.getAttribute('data-text');
+      sessionStorage.setItem('valorProduto', valorBotaoEnviar7);
+      sessionStorage.setItem('nomeProduto', textoBotaoEnviar7);
   
       // Ouvinte de evento para os botões de modelos (cores)
       const botaoModelos = document.querySelectorAll(".cores7");

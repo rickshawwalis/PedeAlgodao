@@ -106,3 +106,60 @@ document.addEventListener('click', (ev) => {
       et.style.backgroundColor = "#61A2B0";
     }
   });
+
+
+  //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Lógica para definir valores no sessionStorage
+    const definirValoresSessionStorage = () => {
+      // Dados do botão "Concluir"
+      const botaoEnviar = document.querySelector(".concluir5");
+      const valorBotaoEnviar = parseFloat(botaoEnviar.value);
+      const textoBotaoEnviar = botaoEnviar.getAttribute('data-text');
+      sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+      sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
+  
+      // Ouvinte de evento para os botões de modelos (cores)
+      const botaoModelos = document.querySelectorAll(".cores5");
+      botaoModelos.forEach(corModelos => {
+        corModelos.addEventListener("click", () => {
+          const corModelo = corModelos.value;
+          sessionStorage.setItem('escolhaCor', corModelo);
+        })
+      })
+  
+      // Ouvinte de evento para os botões de tamanhos
+      const botaoTamanhos = document.querySelectorAll(".tamanhos5");
+      botaoTamanhos.forEach(tamanho => {
+        tamanho.addEventListener("click", () => {
+          const valorTamanho = tamanho.value;
+          sessionStorage.setItem('escolhaTamanho', valorTamanho);
+        })
+      })
+  
+      // Ouvinte de evento para a opção de quantidade
+      document.getElementById('opcoes5').addEventListener('change', function () {
+        const opcaoEscolhida = this.value;
+        sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+      })
+    }
+  
+    const concluirCompra = () => {
+      //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
+      const coresSelecionadas = document.querySelector('.cores5:active');
+      const tamanhoSelecionado = document.querySelector('.tamanhos5:active');
+      const opcaoSelecionada = document.getElementById('opcoes5').value;
+  
+      if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
+        alert("Para prosseguir, escolha: cor, tamanho e quantidade");
+        return false;
+      }
+      // Redirecionar para a próxima página
+      //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+      window.location.href = '/CARRINHO/comprasFeitas.html';
+    }
+    definirValoresSessionStorage();
+    document.querySelector(".concluir5").addEventListener("click", concluirCompra)
+  });
+  

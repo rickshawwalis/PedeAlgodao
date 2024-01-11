@@ -8,7 +8,7 @@
     margin-bottom: 15px;
     color: #96206F;
     font-size: 22px;
-
+    font-family: 'Circular', sans-serif;
 }
 
 .tituloA2,.tituloA3,.tituloA4,.tituloA5,.tituloA6,.tituloA7,.tituloA8{
@@ -19,6 +19,14 @@
     text-align: justify;
     width: 340px;
     margin-bottom: 15px;
+    font-family: 'Arial Rounded MS Bold', sans-serif;
+    font-size: 15px;
+
+}
+
+/*TITULO de COR TAMANHO E OPÇÃO*/
+.TextCorTamanhoOpcao{
+    font-family: 'Arial Rounded MS Bold', sans-serif;
 }
 
 /*centralizando os layout/caixas*/
@@ -68,7 +76,7 @@ section {
     padding: 12px;
     cursor: pointer;
     font-weight: 600;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Circular', sans-serif;  font-family: 'Circular', sans-serif;
     border-radius: 20px;
     box-shadow: 0px 0px 5px;
     border: 1px solid;
@@ -77,8 +85,8 @@ section {
 
 /*definição do layout onde estão os botões */
 #cor,
-#tamanho {
-    margin: 10px 0px 15px 0px;
+#tamanho, #opçao {
+    margin: 15px 0px 30px 0px;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -87,14 +95,14 @@ section {
 
 /*definição da div botão concluir */
 .botConcluinr {
-    margin: 0px 0px 100px 0px;
+    margin: 50px 0px 100px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /*definição do botão concluir */
 .concluir,.concluir1,.concluir2,.concluir2,.concluir3,.concluir4,.concluir5,.concluir6,.concluir7 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Circular', sans-serif;
     border-radius: 50px 50px;
     background-color: #96206F;
     color: white;
@@ -107,7 +115,7 @@ section {
 
 .adquirir,.adquirir1,.adquirir2,.adquirir3,.adquirir4,.adquirir5,.adquirir6,.adquirir7  {
     margin: 15px 0px 20px 0px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Circular', sans-serif;
     border-radius: 20px 20px;
     background-color: #96206F;
     color: white;
@@ -125,7 +133,7 @@ section {
     margin: 25px 0px 30px 0px;
     background-color: rgb(253, 75, 75);
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Circular', sans-serif;
     border: 1px solid black;
 }
 

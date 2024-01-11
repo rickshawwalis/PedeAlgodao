@@ -68,7 +68,7 @@ document.addEventListener('click', (e) => {
             el.style.backgroundColor = "#666F8C";
         }
         if (el.classList.contains("branca7")) {
-            imagem.src = '/PedeAlgodao/img-Index/PARAHOMENS/azulmarinho.png';
+            imagem.src = '/PedeAlgodao/img-Index/PARAHOMENS/branca.png';
             el.style.backgroundColor = "white";
         }
         if (el.classList.contains("neon7")) {

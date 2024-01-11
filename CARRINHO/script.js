@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nomeModelo = sessionStorage.getItem('nomeProduto');
-    const valorModelo = sessionStorage.getItem('valorProduto');
+    const valorModelo = parseFloat(sessionStorage.getItem('valorProduto'));
     const cor = sessionStorage.getItem('escolhaCor');
     const tamanho = sessionStorage.getItem('escolhaTamanho');
     const quantidade = sessionStorage.getItem('opcaoQuantidade')
     // const quantidade
     
     document.querySelector('#nomeproduto').innerHTML = `
-<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo} - <span style="font-weight: bold;"> VALOR R$</span> ${valorModelo}
+<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo} - <span style="font-weight: bold;"> VALOR R$</span> ${valorModelo.toFixed(2)}
     `;
 
     document.querySelector('#cor').innerHTML = `

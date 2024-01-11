@@ -138,6 +138,7 @@ document.addEventListener('click', (ev) => {
   }
 });
 
+//PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage

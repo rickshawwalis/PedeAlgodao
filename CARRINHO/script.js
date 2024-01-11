@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tamanho = sessionStorage.getItem('escolhaTamanho');
     const quantidade = sessionStorage.getItem('opcaoQuantidade')
     // const quantidade
-
+    
     document.querySelector('#nomeproduto').innerHTML = `
 <span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo} - <span style="font-weight: bold;"> VALOR R$</span> ${valorModelo}
     `;

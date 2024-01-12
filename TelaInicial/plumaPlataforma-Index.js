@@ -27,7 +27,7 @@ const limparSelecoes4 = () => {
 
      //limpar opção de quantidade escolhida
      let select = document.getElementById("opcoes4");
-     select.value = "";
+     select.value = "---";
 }
 
 //FECHAR
@@ -117,12 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para definir valores no sessionStorage
     const definirValoresSessionStorage4 = () => {
-      // Dados do botão "Concluir"
-      const botaoEnviar4 = document.querySelector(".concluir4");
-      const valorBotaoEnviar4 = parseFloat(botaoEnviar4.getAttribute('data-value5'));
-      const textoBotaoEnviar4 = botaoEnviar4.getAttribute('data-text5');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar4);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar4);
+    
   
       // Ouvinte de evento para os botões de modelos (cores)
       const botaoModelos = document.querySelectorAll(".cores4");
@@ -148,6 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       })
     }
+
+    const NomeValorProduto=()=>{
+     // Dados do botão "Concluir"
+     const botaoEnviar4 = document.querySelector(".concluir4");
+     const valorBotaoEnviar4 = parseFloat(botaoEnviar4.getAttribute('data-value5'));
+     const textoBotaoEnviar4 = botaoEnviar4.getAttribute('data-text5');
+     sessionStorage.setItem('valorProduto', valorBotaoEnviar4);
+     sessionStorage.setItem('nomeProduto', textoBotaoEnviar4);
+   }
   
     const concluirCompra4 = () => {
       //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -164,6 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     }
     definirValoresSessionStorage4();
-    document.querySelector(".concluir4").addEventListener("click", concluirCompra4)
+    document.querySelector(".concluir4").addEventListener("click", ()=>{
+      NomeValorProduto();
+      concluirCompra4();
+    })
   });
   

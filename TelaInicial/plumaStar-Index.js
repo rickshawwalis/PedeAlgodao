@@ -27,7 +27,7 @@ const limparSelecoes1 = () => {
 
    //limpar opção de quantidade escolhida
    let select = document.getElementById("opcoes1");
-   select.value = "";
+   select.value = "---";
 }
 
 //FECHAR
@@ -140,12 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage6 = () => {
-    // Dados do botão "Concluir"
-    const botaoEnviar1= document.querySelector(".concluir1");
-    const valorBotaoEnviar1 = parseFloat(botaoEnviar1.getAttribute('data-value2'));
-    const textoBotaoEnviar1 = botaoEnviar1.getAttribute('data-text2');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar1);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar1);
+ 
 
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores1");
@@ -172,6 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const NomeValorProduto=()=>{
+      // Dados do botão "Concluir"
+      const botaoEnviar1= document.querySelector(".concluir1");
+      const valorBotaoEnviar1 = parseFloat(botaoEnviar1.getAttribute('data-value2'));
+      const textoBotaoEnviar1 = botaoEnviar1.getAttribute('data-text2');
+      sessionStorage.setItem('valorProduto', valorBotaoEnviar1);
+      sessionStorage.setItem('nomeProduto', textoBotaoEnviar1);
+  }
+
   const concluirCompra6 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores1:active');
@@ -187,6 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
   definirValoresSessionStorage6();
-  document.querySelector(".concluir1").addEventListener("click", concluirCompra6)
+  document.querySelector(".concluir1").addEventListener("click", ()=>{
+    NomeValorProduto();
+    concluirCompra6();
+  })
 });
 

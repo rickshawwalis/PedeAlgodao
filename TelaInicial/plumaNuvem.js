@@ -143,14 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage = () => {
-    // Dados do botão "Concluir"
-    const botaoEnviar = document.querySelector(".concluir");
-    const valorBotaoEnviar = parseFloat(botaoEnviar.getAttribute('data-value1'));
-    const textoBotaoEnviar = botaoEnviar.getAttribute('data-text1');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
-
-    // Ouvinte de evento para os botões de modelos (cores)
+       // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores");
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
@@ -175,6 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const NomeValorProduto=()=>{
+     // Dados do botão "Concluir"
+     const botaoEnviar = document.querySelector(".concluir");
+     const valorBotaoEnviar = parseFloat(botaoEnviar.getAttribute('data-value1'));
+     const textoBotaoEnviar = botaoEnviar.getAttribute('data-text1');
+     sessionStorage.setItem('valorProduto', valorBotaoEnviar);
+     sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
+  }
+
   const concluirCompra = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores:active');
@@ -186,9 +188,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
     // Redirecionar para a próxima página
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    window.location.href = '/CARRINHO/comprasFeitas.html';
   }
+
   definirValoresSessionStorage();
-  document.querySelector(".concluir").addEventListener("click", concluirCompra)
+  document.querySelector(".concluir").addEventListener("click", ()=>{
+    NomeValorProduto()
+    concluirCompra()
+  })
 });
 

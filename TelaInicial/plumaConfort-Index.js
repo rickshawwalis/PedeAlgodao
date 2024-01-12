@@ -27,7 +27,7 @@ const comprar2 = () => {
 
      //limpar opção de quantidade escolhida
      let select = document.getElementById("opcoes2");
-     select.value = "";
+     select.value = "---";
   }
   
   //FECHAR
@@ -131,13 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage2 = () => {
-    // Dados do botão "Concluir"
-    const botaoEnviar2 = document.querySelector(".concluir2");
-    const valorBotaoEnviar2 = parseFloat(botaoEnviar2.getAttribute('data-value3'));
-    const textoBotaoEnviar2 = botaoEnviar2.getAttribute('data-text3');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar2);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar2);
-
+  
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores2");
     botaoModelos.forEach(corModelos => {
@@ -163,6 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const NomeValorProduto =()=>{
+  // Dados do botão "Concluir"
+  const botaoEnviar2 = document.querySelector(".concluir2");
+  const valorBotaoEnviar2 = parseFloat(botaoEnviar2.getAttribute('data-value3'));
+  const textoBotaoEnviar2 = botaoEnviar2.getAttribute('data-text3');
+  sessionStorage.setItem('valorProduto', valorBotaoEnviar2);
+  sessionStorage.setItem('nomeProduto', textoBotaoEnviar2);
+  }
+
   const concluirCompra2 = () => {
     //estrutura para usar a coondição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores2:active');
@@ -175,9 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Redirecionar para a próxima página
     //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    window.location.href = '/CARRINHO/comprasFeitas.html';
   }
   definirValoresSessionStorage2();
-  document.querySelector(".concluir2").addEventListener("click", concluirCompra2)
+  document.querySelector(".concluir2").addEventListener("click", ()=>{
+    concluirCompra2();
+    NomeValorProduto();
+  })
 });
 

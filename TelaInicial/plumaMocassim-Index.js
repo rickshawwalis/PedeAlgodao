@@ -27,8 +27,10 @@ const limparSelecoes6 = () => {
 
      //limpar opção de quantidade escolhida
      let select = document.getElementById("opcoes6");
-     select.value = "";
+     select.value = "---";
 }
+
+
 
 //FECHAR
 const cancelar6 = () => {
@@ -109,12 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para definir valores no sessionStorage
     const definirValoresSessionStorage6 = () => {
-      // Dados do botão "Concluir"
-      const botaoEnviar6 = document.querySelector(".concluir6");
-      const valorBotaoEnviar6 = parseFloat(botaoEnviar6.getAttribute('data-value7'));
-      const textoBotaoEnviar6 = botaoEnviar6.getAttribute('data-text7');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar6);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar6);
+   
   
       // Ouvinte de evento para os botões de modelos (cores)
       const botaoModelos = document.querySelectorAll(".cores6");
@@ -140,6 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       })
     }
+
+    const NomeValorProduto =()=>{
+        // Dados do botão "Concluir"
+        const botaoEnviar6 = document.querySelector(".concluir6");
+        const valorBotaoEnviar6 = parseFloat(botaoEnviar6.getAttribute('data-value7'));
+        const textoBotaoEnviar6 = botaoEnviar6.getAttribute('data-text7');
+        sessionStorage.setItem('valorProduto', valorBotaoEnviar6);
+        sessionStorage.setItem('nomeProduto', textoBotaoEnviar6);
+     }
   
     const concluirCompra6 = () => {
       //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -156,6 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     }
     definirValoresSessionStorage6();
-    document.querySelector(".concluir6").addEventListener("click", concluirCompra6)
+    document.querySelector(".concluir6").addEventListener("click", ()=>{
+      NomeValorProduto();
+      concluirCompra6();
+    })
   });
   

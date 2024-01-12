@@ -27,7 +27,7 @@ const limparSelecoes5 = () => {
 
      //limpar opção de quantidade escolhida
      let select = document.getElementById("opcoes5");
-     select.value = "";
+     select.value = "---";
 }
 
 //FECHAR
@@ -113,12 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para definir valores no sessionStorage
     const definirValoresSessionStorage5 = () => {
-      // Dados do botão "Concluir"
-      const botaoEnviar5 = document.querySelector(".concluir5");
-      const valorBotaoEnviar5 = parseFloat(botaoEnviar5.getAttribute('data-value6'));
-      const textoBotaoEnviar5 = botaoEnviar5.getAttribute('data-text6');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar5);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar5);
+    
   
       // Ouvinte de evento para os botões de modelos (cores)
       const botaoModelos = document.querySelectorAll(".cores5");
@@ -144,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       })
     }
+
+    const NomeValorProduto=()=>{
+      // Dados do botão "Concluir"
+      const botaoEnviar5 = document.querySelector(".concluir5");
+      const valorBotaoEnviar5 = parseFloat(botaoEnviar5.getAttribute('data-value6'));
+      const textoBotaoEnviar5 = botaoEnviar5.getAttribute('data-text6');
+      sessionStorage.setItem('valorProduto', valorBotaoEnviar5);
+      sessionStorage.setItem('nomeProduto', textoBotaoEnviar5);
+    }
   
     const concluirCompra5 = () => {
       //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -160,6 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     }
     definirValoresSessionStorage5();
-    document.querySelector(".concluir5").addEventListener("click", concluirCompra5)
+    document.querySelector(".concluir5").addEventListener("click", ()=>{
+      NomeValorProduto();
+      concluirCompra5();
+    })
   });
   

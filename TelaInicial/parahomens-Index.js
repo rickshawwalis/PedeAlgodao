@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
     // Redirecionar para a próxima página
-    //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+  window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+  
   }
   definirValoresSessionStorage7();
   document.querySelector(".concluir7").addEventListener("click", () => {

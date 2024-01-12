@@ -102,59 +102,59 @@ document.addEventListener('click', (ev) => {
     }
   });
 
-//PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
-  document.addEventListener('DOMContentLoaded', () => {
+// //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
+//   document.addEventListener('DOMContentLoaded', () => {
 
-    // Lógica para definir valores no sessionStorage
-    const definirValoresSessionStorage7 = () => {
-      // Dados do botão "Concluir"
-      const botaoEnviar7 = document.querySelector(".concluir7");
-      const valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute('data-value8'));
-      const textoBotaoEnviar7 = botaoEnviar7.getAttribute('data-text8');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar7);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar7);
+//     // Lógica para definir valores no sessionStorage
+//     const definirValoresSessionStorage7 = () => {
+//       // Dados do botão "Concluir"
+//       const botaoEnviar7 = document.querySelector(".concluir7");
+//       const valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute('data-value8'));
+//       const textoBotaoEnviar7 = botaoEnviar7.getAttribute('data-text8');
+//       sessionStorage.setItem('valorProduto', valorBotaoEnviar7);
+//       sessionStorage.setItem('nomeProduto', textoBotaoEnviar7);
   
-      // Ouvinte de evento para os botões de modelos (cores)
-      const botaoModelos = document.querySelectorAll(".cores7");
-      botaoModelos.forEach(corModelos => {
-        corModelos.addEventListener("click", () => {
-          const corModelo = corModelos.value;
-          sessionStorage.setItem('escolhaCor', corModelo);
-        })
-      })
+//       // Ouvinte de evento para os botões de modelos (cores)
+//       const botaoModelos = document.querySelectorAll(".cores7");
+//       botaoModelos.forEach(corModelos => {
+//         corModelos.addEventListener("click", () => {
+//           const corModelo = corModelos.value;
+//           sessionStorage.setItem('escolhaCor', corModelo);
+//         })
+//       })
   
-      // Ouvinte de evento para os botões de tamanhos
-      const botaoTamanhos = document.querySelectorAll(".tamanhos7");
-      botaoTamanhos.forEach(tamanho => {
-        tamanho.addEventListener("click", () => {
-          const valorTamanho = tamanho.value;
-          sessionStorage.setItem('escolhaTamanho', valorTamanho);
-        })
-      })
+//       // Ouvinte de evento para os botões de tamanhos
+//       const botaoTamanhos = document.querySelectorAll(".tamanhos7");
+//       botaoTamanhos.forEach(tamanho => {
+//         tamanho.addEventListener("click", () => {
+//           const valorTamanho = tamanho.value;
+//           sessionStorage.setItem('escolhaTamanho', valorTamanho);
+//         })
+//       })
   
-      // Ouvinte de evento para a opção de quantidade
-      document.getElementById('opcoes7').addEventListener('change', function () {
-        const opcaoEscolhida = this.value;
-        sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-      })
-    }
+//       // Ouvinte de evento para a opção de quantidade
+//       document.getElementById('opcoes7').addEventListener('change', function () {
+//         const opcaoEscolhida = this.value;
+//         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+//       })
+//     }
   
-    const concluirCompra7 = () => {
-      //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
-      const coresSelecionadas = document.querySelector('.cores7:active');
-      const tamanhoSelecionado = document.querySelector('.tamanhos7:active');
-      const opcaoSelecionada = document.getElementById('opcoes7').value;
+//     const concluirCompra7 = () => {
+//       //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
+//       const coresSelecionadas = document.querySelector('.cores7:active');
+//       const tamanhoSelecionado = document.querySelector('.tamanhos7:active');
+//       const opcaoSelecionada = document.getElementById('opcoes7').value;
   
-      if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
-        alert("Para prosseguir, escolha: cor, tamanho e quantidade");
-        return false;
-      }
-      // Redirecionar para a próxima página
-      //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    }
-    definirValoresSessionStorage7();
-    document.querySelector(".concluir7").addEventListener("click", concluirCompra7)
-  });
+//       if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
+//         alert("Para prosseguir, escolha: cor, tamanho e quantidade");
+//         return false;
+//       }
+//       // Redirecionar para a próxima página
+//       //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+//       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+//     }
+//     definirValoresSessionStorage7();
+//     document.querySelector(".concluir7").addEventListener("click", concluirCompra7)
+//   });
   
   

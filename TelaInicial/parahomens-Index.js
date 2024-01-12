@@ -106,7 +106,7 @@ document.addEventListener('click', (ev) => {
   document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para definir valores no sessionStorage
- 
+    const definirValoresSessionStorage7 = () => {
       // Dados do botão "Concluir"
       const botaoEnviar7 = document.querySelector(".concluir7");
       const valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute('data-value8'));
@@ -137,7 +137,7 @@ document.addEventListener('click', (ev) => {
         const opcaoEscolhida = this.value;
         sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
       })
-    
+    }
   
     const concluirCompra7 = () => {
       //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -149,11 +149,12 @@ document.addEventListener('click', (ev) => {
         alert("Para prosseguir, escolha: cor, tamanho e quantidade");
         return false;
       }
+      definirValoresSessionStorage7();
       // Redirecionar para a próxima página
       //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     }
-   // definirValoresSessionStorage7();
+  
     document.querySelector(".concluir7").addEventListener("click", concluirCompra7)
   });
   

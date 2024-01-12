@@ -130,7 +130,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage2 = () => {
+
     // Dados do botão "Concluir"
     const botaoEnviar2 = document.querySelector(".concluir2");
     const valorBotaoEnviar2 = parseFloat(botaoEnviar2.getAttribute('data-value3'));
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const opcaoEscolhida = this.value;
       sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
     })
-  }
+  
 
   const concluirCompra2 = () => {
     //estrutura para usar a coondição de obrigar escolher cor, tamanho e opção

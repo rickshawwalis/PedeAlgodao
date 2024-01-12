@@ -130,7 +130,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage = () => {
+  const definirValoresSessionStorage2 = () => {
     // Dados do botão "Concluir"
     const botaoEnviar2 = document.querySelector(".concluir2");
     const valorBotaoEnviar2 = parseFloat(botaoEnviar2.value);
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const concluirCompra = () => {
+  const concluirCompra2 = () => {
     //estrutura para usar a coondição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores2:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos2:active');
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
-  definirValoresSessionStorage();
-  document.querySelector(".concluir2").addEventListener("click", concluirCompra)
+  definirValoresSessionStorage2();
+  document.querySelector(".concluir2").addEventListener("click", concluirCompra2)
 });
 

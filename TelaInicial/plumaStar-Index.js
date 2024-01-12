@@ -139,7 +139,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage = () => {
+  const definirValoresSessionStorage6 = () => {
     // Dados do botão "Concluir"
     const botaoEnviar1= document.querySelector(".concluir1");
     const valorBotaoEnviar1 = parseFloat(botaoEnviar1.value);
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const concluirCompra = () => {
+  const concluirCompra6 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores1:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos1:active');
@@ -180,13 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
-      return false;
+      return false; 
     }
     // Redirecionar para a próxima página
     //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
-  definirValoresSessionStorage();
-  document.querySelector(".concluir1").addEventListener("click", concluirCompra)
+  definirValoresSessionStorage6();
+  document.querySelector(".concluir1").addEventListener("click", concluirCompra6)
 });
 

@@ -103,7 +103,7 @@ document.addEventListener('click', (ev) => {
   });
 
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
- 
+  document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para definir valores no sessionStorage
     const definirValoresSessionStorage7 = () => {
@@ -155,6 +155,6 @@ document.addEventListener('click', (ev) => {
     }
     definirValoresSessionStorage7();
     document.querySelector(".concluir7").addEventListener("click", concluirCompra7)
- 
+  });
   
   

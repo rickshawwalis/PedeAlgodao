@@ -185,11 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
-    definirValoresSessionStorage();
     // Redirecionar para a próxima página
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
- 
+  definirValoresSessionStorage();
   document.querySelector(".concluir").addEventListener("click", concluirCompra)
 });
 

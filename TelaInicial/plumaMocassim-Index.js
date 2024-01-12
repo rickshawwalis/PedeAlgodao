@@ -150,14 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
         alert("Para prosseguir, escolha: cor, tamanho e quantidade");
         return false;
-        
       }
-      definirValoresSessionStorage6();
       // Redirecionar para a próxima página
       //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
       window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     }
-   
+    definirValoresSessionStorage6();
     document.querySelector(".concluir6").addEventListener("click", concluirCompra6)
   });
   

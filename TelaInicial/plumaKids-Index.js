@@ -143,12 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
-    definirValoresSessionStorage3();
     // Redirecionar para a próxima página
     //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
-
+  definirValoresSessionStorage3();
   document.querySelector(".concluir3").addEventListener("click", concluirCompra3)
 });
 

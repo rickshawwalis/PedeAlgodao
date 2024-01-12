@@ -139,7 +139,7 @@ document.addEventListener('click', (ev) => {
 });
 
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
-//document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage = () => {
@@ -185,11 +185,11 @@ document.addEventListener('click', (ev) => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
-   
+    definirValoresSessionStorage();
     // Redirecionar para a próxima página
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
-  definirValoresSessionStorage();
+ 
   document.querySelector(".concluir").addEventListener("click", concluirCompra)
-//});
+});
 

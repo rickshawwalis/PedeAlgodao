@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const definirValoresSessionStorage4 = () => {
       // Dados do botão "Concluir"
       const botaoEnviar4 = document.querySelector(".concluir4");
-      const valorBotaoEnviar4 = parseFloat(botaoEnviar4.value);
-      const textoBotaoEnviar4 = botaoEnviar4.getAttribute('data-text');
+      const valorBotaoEnviar4 = parseFloat(botaoEnviar4.getAttribute('data-value5'));
+      const textoBotaoEnviar4 = botaoEnviar4.getAttribute('data-text5');
       sessionStorage.setItem('valorProduto', valorBotaoEnviar4);
       sessionStorage.setItem('nomeProduto', textoBotaoEnviar4);
   

@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const opcaoEscolhida = this.value;
       sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
     })
+    concluirCompra2()
   }
 
   const concluirCompra2 = () => {
@@ -173,12 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
       return false;
     }
-    definirValoresSessionStorage2();
+   ;
     // Redirecionar para a próxima página
     //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
     window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
   }
 
-  document.querySelector(".concluir2").addEventListener("click", concluirCompra2)
+  document.querySelector(".concluir2").addEventListener("click",  definirValoresSessionStorage2)
 });
 

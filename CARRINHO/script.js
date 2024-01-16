@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(div);
     }
 
-
-
     //     function enviarZap() {
     //         const textoParaEnviar = `
     //     *PRODUTO:* ${nomeModelo}

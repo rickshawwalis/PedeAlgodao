@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
   
-  // Array fora da função para manter os produtos
+  //Array fora da função para manter os produtos
   let NomeProduto = [];
 
 const NomeValorProduto = () => {
@@ -154,8 +154,6 @@ const NomeValorProduto = () => {
     }
   }
 };
-
-
 
   const concluirCompra7 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção

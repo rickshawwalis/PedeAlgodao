@@ -136,12 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const NomeValorProduto = () => {
     // Dados do botão "Concluir"
     const botaoEnviar7 = document.querySelector(".concluir7");
-    const valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute('data-value8'));
-    const textoBotaoEnviar7 = botaoEnviar7.getAttribute('data-text8');
-    sessionStorage.setItem('valorProduto', valorBotaoEnviar7);
-    sessionStorage.setItem('nomeProduto', textoBotaoEnviar7);
-
+  
+    for (let i = 0; i < 15; i++) {
+      let chaveProduto = `Produto${i}`;
+      let chaveValor = `Valor${i}`;
+  
+      // Obtém os valores específicos para esta iteração
+      let textoBotaoEnviar7 = botaoEnviar7.getAttribute(`data-text${i}`);
+      let valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute(`data-value${i}`));
+  
+      // Adiciona os valores ao sessionStorage
+      sessionStorage.setItem(chaveProduto, textoBotaoEnviar7);
+      sessionStorage.setItem(chaveValor, valorBotaoEnviar7);
+    }
   }
+  
 
   const concluirCompra7 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção

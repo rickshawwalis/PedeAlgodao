@@ -1,26 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const nomeModelo = sessionStorage.getItem('nomeProduto');
-    const valorModelo = parseFloat(sessionStorage.getItem('valorProduto'));
-    const cor = sessionStorage.getItem('escolhaCor');
-    const tamanho = sessionStorage.getItem('escolhaTamanho');
-    const quantidade = sessionStorage.getItem('opcaoQuantidade')
-    // const quantidade
+ 
+    const container = document.querySelector('.secao'); // Substitua 'seuContainer' pelo ID real do seu contêiner
+    // Loop para criar uma div para cada conjunto de dados armazenados
+    for (let i = 0; i < 15; i++) {
+      let chaveProduto = `Produto${i}`;
+      let chaveValor = `Valor${i}`;
     
-    document.querySelector('#nomeproduto').innerHTML = `
-<span style="font-weight: bold;">PRODUTO: </span> ${nomeModelo} - <span style="font-weight: bold;"> VALOR R$</span> ${valorModelo.toFixed(2)}
-    `;
-
-    document.querySelector('#cor').innerHTML = `
-    <span style="font-weight: bold;"> COR: </span> ${cor}
-    `;
-
-    document.querySelector('#tamanho').innerHTML = `
-    <span style="font-weight: bold;">TAMANHO: </span> ${tamanho}
-    `;
-
-    document.querySelector('#quantidade').innerHTML = `
-    <span style="font-weight: bold;"> QUANTIDADE: </span> ${quantidade}
-    `
+      let texto = sessionStorage.getItem(chaveProduto);
+      let valor = sessionStorage.getItem(chaveValor);
+    
+      let div = document.createElement('div');
+      div.setAttribute("class","mercadoria")
+      div.textContent = `Produto: ${texto}, Valor: ${valor}`;
+    
+      container.appendChild(div);
+    }
 
     function enviarZap() {
         const textoParaEnviar = `

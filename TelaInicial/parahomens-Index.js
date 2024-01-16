@@ -132,25 +132,30 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
     })
   }
+  
+  // Array fora da função para manter os produtos
+  let NomeProduto = [];
 
-  const NomeValorProduto = () => {
-    // Dados do botão "Concluir"
-    const botaoEnviar7 = document.querySelector(".concluir7");
+const NomeValorProduto = () => {
+  const botaoEnviar7 = document.querySelector(".concluir7");
   
-    for (let i = 0; i < 15; i++) {
-      let chaveProduto = `Produto${i}`;
-      let chaveValor = `Valor${i}`;
-  
-      // Obtém os valores específicos para esta iteração
-      let textoBotaoEnviar7 = botaoEnviar7.getAttribute(`data-text${i}`);
-      let valorBotaoEnviar7 = parseFloat(botaoEnviar7.getAttribute(`data-value${i}`));
-  
-      // Adiciona os valores ao sessionStorage
-      sessionStorage.setItem(chaveProduto, textoBotaoEnviar7);
-      sessionStorage.setItem(chaveValor, valorBotaoEnviar7);
+  if (botaoEnviar7) {
+    const Produtos = {
+      produto: botaoEnviar7.getAttribute('data-text8'),
+      valor: parseFloat(botaoEnviar7.getAttribute('data-value8'))
+    };
+
+    NomeProduto.push(Produtos);
+
+    // Iterar sobre os produtos e armazenar cada um com uma chave única
+    for (let i = 0; i < NomeProduto.length; i++) {
+      const TipoProduto = `escolhaProduto_${i}`;
+      sessionStorage.setItem(TipoProduto, JSON.stringify(NomeProduto[i]));
     }
   }
-  
+};
+
+
 
   const concluirCompra7 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -163,8 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
     // Redirecionar para a próxima página
-  window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-  
+    window.location.href = '/CARRINHO/comprasFeitas.html';
+
   }
   definirValoresSessionStorage7();
   document.querySelector(".concluir7").addEventListener("click", () => {

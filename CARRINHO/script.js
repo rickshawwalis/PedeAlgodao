@@ -1,24 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    
     const container = document.querySelector('.teste');
 
     for (let i = 0; i < sessionStorage.length; i++) {
-        const chave = sessionStorage.key(i);
-        const valor = sessionStorage.getItem(chave);
+        const TipoProduto = `escolhaProduto_${i}`;
+        const TipoProdutoValor = `escolhaProdutoValor_${i}`;
     
-        let div = document.createElement('div');
-        div.setAttribute("class", "mercadoria");
+        // Obter os valores associados a essas chaves
+        const produto = sessionStorage.getItem(TipoProduto);
+        const valor = parseFloat(sessionStorage.getItem(TipoProdutoValor));
     
-        // Exibir de forma diferente se a chave for relacionada a escolhaProduto
-        if (chave.startsWith('escolhaProduto')) {
-            const produtoInfo = JSON.parse(valor);
-            div.textContent = `Produto: ${produtoInfo.produto}, Valor: ${produtoInfo.valor}`;
-        } else {
-            div.textContent = `Chave: ${chave}, Valor: ${valor}`;
+        // Verificar se produto e valor são válidos
+        if (produto !== null && !isNaN(valor)) {
+            // Criar uma div para cada produto e valor
+            let div = document.createElement('div');
+            div.setAttribute("class", "mercadoria");
+            // Adicionar o conteúdo da div
+            div.innerHTML = 
+            `<br> Produto: ${produto}
+            <br> Valor: ${valor.toFixed(2)}`;
+            // Adicionar a div ao container
+            container.appendChild(div);
         }
-    
-        container.appendChild(div);
     }
+    
+    
+
+   
+ 
     //     function enviarZap() {
     //         const textoParaEnviar = `
     //     *PRODUTO:* ${nomeModelo}

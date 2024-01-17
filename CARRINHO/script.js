@@ -5,14 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < sessionStorage.length; i++) {
         const chave = sessionStorage.key(i);
         const valor = sessionStorage.getItem(chave);
-
+    
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
-
-        div.textContent = `Chave: ${chave}, Valor: ${valor}`;
+    
+        // Exibir de forma diferente se a chave for relacionada a escolhaProduto
+        if (chave.startsWith('escolhaProduto')) {
+            const produtoInfo = JSON.parse(valor);
+            div.textContent = `Produto: ${produtoInfo.produto}, Valor: ${produtoInfo.valor}`;
+        } else {
+            div.textContent = `Chave: ${chave}, Valor: ${valor}`;
+        }
+    
         container.appendChild(div);
     }
-
     //     function enviarZap() {
     //         const textoParaEnviar = `
     //     *PRODUTO:* ${nomeModelo}

@@ -133,27 +133,36 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
   
-  //Array fora da função para manter os produtos
-  let NomeProduto = [];
 
-const NomeValorProduto = () => {
-  const botaoEnviar7 = document.querySelector(".concluir7");
+
   
-  if (botaoEnviar7) {
-    const Produtos = {
-      produto: botaoEnviar7.getAttribute('data-text8'),
-      valor: parseFloat(botaoEnviar7.getAttribute('data-value8'))
-    };
+  //Array fora da função para manter os produtos-----------------------------------------------------------
 
-    NomeProduto.push(Produtos);
-
-    // Iterar sobre os produtos e armazenar cada um com uma chave única
-    for (let i = 0; i < NomeProduto.length; i++) {
-      const TipoProduto = `escolhaProduto_${i}`;
-      sessionStorage.setItem(TipoProduto, JSON.stringify(NomeProduto[i]));
+  const NomeValorProduto = () => {
+    const botaoEnviar7 = document.querySelector(".concluir7");
+    
+    if (botaoEnviar7) {
+      const Produto = {
+        produto: botaoEnviar7.getAttribute('data-text8'),
+        valor: parseFloat(botaoEnviar7.getAttribute('data-value8'))
+      };
+  
+      // Obter a quantidade atual de itens em sessionStorage
+      const numItens = sessionStorage.length;
+  
+      // Usar o número atual de itens como o índice i
+      const TipoProduto = `escolhaProduto_${numItens}`;
+      
+      // Armazenar o novo item no sessionStorage
+      sessionStorage.setItem(TipoProduto, JSON.stringify(Produto));
     }
-  }
-};
+  };
+  
+
+  
+//-------------------------------------------------------------
+
+
 
   const concluirCompra7 = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção

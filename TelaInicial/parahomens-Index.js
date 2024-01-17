@@ -132,35 +132,34 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
     })
   }
-  
 
 
-  
+
+
   //Array fora da função para manter os produtos-----------------------------------------------------------
 
   const NomeValorProduto = () => {
     const botaoEnviar7 = document.querySelector(".concluir7");
-    
-    if (botaoEnviar7) {
-      const Produto = {
-        produto: botaoEnviar7.getAttribute('data-text8'),
-        valor: parseFloat(botaoEnviar7.getAttribute('data-value8'))
-      };
   
-      // Obter a quantidade atual de itens em sessionStorage
-      const numItens = sessionStorage.length;
+    const produto = botaoEnviar7.getAttribute('data-text8');
+    const valor = parseFloat(botaoEnviar7.getAttribute('data-value8'));
   
-      // Usar o número atual de itens como o índice i
-      const TipoProduto = `escolhaProduto_${numItens}`;
-      
-      // Armazenar o novo item no sessionStorage
-      sessionStorage.setItem(TipoProduto, JSON.stringify(Produto));
-    }
+    // Obter a quantidade atual de itens em sessionStorage
+    const numItens = sessionStorage.length;
+  
+    // Usar o número atual de itens como o índice i
+    const TipoProduto = `escolhaProduto_${numItens}`;
+    const TipoProdutoValor = `escolhaProdutoValor_${numItens}`;
+  
+    // Armazenar o novo item no sessionStorage
+    sessionStorage.setItem(TipoProduto, produto);
+    sessionStorage.setItem(TipoProdutoValor, valor);
   };
   
 
-  
-//-------------------------------------------------------------
+
+
+  //-------------------------------------------------------------
 
 
 

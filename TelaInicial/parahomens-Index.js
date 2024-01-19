@@ -108,15 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
 
+    let indiceCores = 0;
+    let indiceTamanhos = 0;
+    let indiceOpcao = 0;
+
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
 
-        const Cor = sessionStorage.length;
-        const EscolhaCor = `cores_${Cor}`
-        sessionStorage.setItem(EscolhaCor, corModelo);
+        if (corModelo) {
+          const EscolhaCor = `cores_${indiceCores}`;
+          sessionStorage.setItem(EscolhaCor, corModelo);
+          indiceCores++;
+        }
       })
     })
 
@@ -126,44 +132,59 @@ document.addEventListener('DOMContentLoaded', () => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
 
-        const Tamanho = sessionStorage.length;
-        const EscolhaTamanho = `tamanhos_${Tamanho}`
-        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+        if (valorTamanho) {
+          const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+          sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+          indiceTamanhos++;
+        }
       })
     })
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      const Opcao = sessionStorage.length;
-      const EscolhaOpcao = `opcoes_${Opcao}`;
-      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+
+      if (opcaoEscolhida) {
+        const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+        sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+        indiceOpcao++;
+      }
     })
   }
 
 
 
 
-  //Array fora da função para manter os produtos-----------------------------------------------------------
 
+ 
+   // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  let indiceProduto = 0;
+  let indiceValor = 0;
   const NomeValorProduto = () => {
+   
+       // Obtenha a referência do botão usando um seletor mais específico
     const botaoEnviar7 = document.querySelector(".concluir7");
-  
-    const produto = botaoEnviar7.getAttribute('data-text8');
-    const valor = parseFloat(botaoEnviar7.getAttribute('data-value8'));
-  
-    // Obter a quantidade atual de itens em sessionStorage
-    const numItens = sessionStorage.length;
-  
-    // Usar o número atual de itens como o índice i
-    const TipoProduto = `escolhaProduto_${numItens}`;
-    const TipoProdutoValor = `escolhaProdutoValor_${numItens}`;
-  
-    // Armazenar o novo item no sessionStorage
-    sessionStorage.setItem(TipoProduto, produto);
-    sessionStorage.setItem(TipoProdutoValor, valor);
-  };
-  
+
+    // Verifique se o botão foi encontrado antes de prosseguir
+    if (botaoEnviar7) {
+        // Obtenha os atributos do botão
+        const produto = botaoEnviar7.getAttribute('data-text8');
+        const valor = parseFloat(botaoEnviar7.getAttribute('data-value8'));
+
+        // Use o índice atual para criar chaves únicas no sessionStorage
+        const TipoProduto = `escolhaProduto_${indiceProduto}`;
+        const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+
+        // Incremente os índices para a próxima chamada da função
+        indiceProduto++;
+        indiceValor++;
+
+        // Armazene os novos itens no sessionStorage
+        sessionStorage.setItem(TipoProduto, produto);
+        sessionStorage.setItem(TipoProdutoValor, valor);
+    } 
+};
+
 
 
 

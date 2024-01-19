@@ -113,7 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
+
+        const Cor = sessionStorage.length;
+        const EscolhaCor = `cores_${Cor}`
+        sessionStorage.setItem(EscolhaCor, corModelo);
       })
     })
 
@@ -122,14 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
+
+        const Tamanho = sessionStorage.length;
+        const EscolhaTamanho = `tamanhos_${Tamanho}`
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
       })
     })
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
+      const Opcao = sessionStorage.length;
+      const EscolhaOpcao = `opcoes_${Opcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
     })
   }
 

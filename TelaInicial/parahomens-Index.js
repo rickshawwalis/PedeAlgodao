@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
 
-    let indiceCores = 0;
-    let indiceTamanhos = 0;
-    let indiceOpcao = 0;
+    let indiceCores = sessionStorage.length;
+    let indiceTamanhos = sessionStorage.length;
+    let indiceOpcao = sessionStorage.length;
 
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
    // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
-  let indiceProduto = 0;
-  let indiceValor = 0;
+  let indiceProduto = sessionStorage.length;
+  let indiceValor = sessionStorage.length;
   const NomeValorProduto = () => {
    
        // Obtenha a referência do botão usando um seletor mais específico

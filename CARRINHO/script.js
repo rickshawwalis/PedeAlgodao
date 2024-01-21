@@ -1,39 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.teste');
 
-        const container = document.querySelector('.teste');
-      
-        for (let i = 0; i < sessionStorage.length; i++) {
-            const chaveProduto = `escolhaProduto_${i}`;
-            const chaveValor = `escolhaProdutoValor_${i}`;
-            const chaveCores = `cores_${i}`;
-            const chaveTamanho = `tamanhos_${i}`;
-            const chaveQuantidade = `opcoes_${i}`;
+    const escolhaProduto = [];
+    const escolhaValor = [];
+    const escolhaCores = [];
+    const escolhaTamanho = [];
+    const escolhaQuantidade = [];
     
-            console.log("Chave do produto:", chaveProduto);
+    for (let i = 0; i < sessionStorage.length; i++) {
+        const chaveProduto = `escolhaProduto_${i}`;
+        const chaveValor = `escolhaProdutoValor_${i}`;
+        const chaveCores = `cores_${i}`;
+        const chaveTamanho = `tamanhos_${i}`;
+        const chaveQuantidade = `opcoes_${i}`;
     
-            const produto = sessionStorage.getItem(chaveProduto);
-            const valor = parseFloat(sessionStorage.getItem(chaveValor));
-            const cores = sessionStorage.getItem(chaveCores);
-            const tamanhos = sessionStorage.getItem(chaveTamanho);
-            const quantidade = sessionStorage.getItem(chaveQuantidade);
-        
-           if (produto !== null && cores !== null && tamanhos !== null && quantidade !== null && !isNaN(valor)) {
+        escolhaProduto.push(sessionStorage.getItem(chaveProduto));
+        escolhaValor.push(parseFloat(sessionStorage.getItem(chaveValor)));
+        escolhaCores.push(sessionStorage.getItem(chaveCores));
+        escolhaTamanho.push(sessionStorage.getItem(chaveTamanho));
+        escolhaQuantidade.push(sessionStorage.getItem(chaveQuantidade));
+    }
+    
+    // Inverter os arrays após o loop
+    let Produto = escolhaProduto.reverse();
+    let Valor = escolhaValor.reverse();
+    let Cores = escolhaCores.reverse();
+    let Tamanhos = escolhaTamanho.reverse();
+    let Quantidade = escolhaQuantidade.reverse();
+    
+    // Verificar se há itens antes de exibir
+    for (let i = 0; i < escolhaProduto.length; i++) {
+        if (
+            Produto[i] &&
+            Cores[i] &&
+            Tamanhos[i] &&
+            Quantidade[i] &&
+            !isNaN(Valor[i])
+        ) {
             let div = document.createElement('div');
             div.setAttribute("class", "mercadoria");
             div.innerHTML =
                 `
-                <br> PRODUTO: ${produto}
-                <br> VALOR: ${valor.toFixed(2)}
-                <br> CORES: ${cores}
-                <br> TAMANHOS: ${tamanhos}
-                <br> QUANTIDADE: ${quantidade}
+                <br> PRODUTO: ${Produto[i]}
+                <br> VALOR: ${Valor[i]}
+                <br> CORES: ${Cores[i]}
+                <br> TAMANHOS: ${Tamanhos[i]}
+                <br> QUANTIDADE: ${Quantidade[i]}
                 `;
             container.appendChild(div);
         }
-        }
+    }
     
-
-
     //     function enviarZap() {
     //         const textoParaEnviar = `
     //     *PRODUTO:* ${nomeModelo}

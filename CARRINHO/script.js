@@ -17,19 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const tamanhos = sessionStorage.getItem(chaveTamanho);
             const quantidade = sessionStorage.getItem(chaveQuantidade);
         
-            if (produto !== null && !isNaN(valor)) {
-                let div = document.createElement('div');
-                div.setAttribute("class", "mercadoria");
-                div.innerHTML =
-                    `
+           if (produto !== null && cores !== null && tamanhos !== null && quantidade !== null && !isNaN(valor)) {
+            let div = document.createElement('div');
+            div.setAttribute("class", "mercadoria");
+            div.innerHTML =
+                `
                 <br> PRODUTO: ${produto}
                 <br> VALOR: ${valor.toFixed(2)}
                 <br> CORES: ${cores}
                 <br> TAMANHOS: ${tamanhos}
                 <br> QUANTIDADE: ${quantidade}
                 `;
-                container.appendChild(div);
-            }
+            container.appendChild(div);
+        }
         }
     
 

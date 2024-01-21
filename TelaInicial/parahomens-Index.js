@@ -152,11 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-
-
-
-
- 
    // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
   let indiceProduto = sessionStorage.length;
   let indiceValor = sessionStorage.length;

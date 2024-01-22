@@ -201,11 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/CARRINHO/comprasFeitas.html';
 
   }
-  
+  definirValoresSessionStorage7();
   document.querySelector(".concluir7").addEventListener("click", () => {
     concluirCompra7();
     NomeValorProduto();
-    definirValoresSessionStorage7();
+  
   })
 });
 

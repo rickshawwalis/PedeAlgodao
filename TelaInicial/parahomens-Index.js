@@ -107,28 +107,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let CorArray = [];
   let TamanhoArray = [];
   let QuantidadeArray = [];
+
+  let indiceCores = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
-    let indiceCores = sessionStorage.length;
+
+    //COR
     const EscolhaCor = `cores_${indiceCores}`
     indiceCores++;
     sessionStorage.setItem(EscolhaCor, CorArray);
-  
 
-
-    let indiceTamanhos = sessionStorage.length;
+    //TAMANHO
     const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
     indiceTamanhos++;
     sessionStorage.setItem(EscolhaTamanho, TamanhoArray);
- 
 
     let indiceOpcao = sessionStorage.length;
+    //QUANTIDADE
     const EscolhaOpcao = `opcoes_${indiceOpcao}`;
     indiceOpcao++;
     sessionStorage.setItem(EscolhaOpcao, QuantidadeArray);
-    
 
-    // Ouvinte de evento para os botões de modelos (cores)
+
+    //CORES
     const botaoModelos = document.querySelectorAll(".cores7");
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
@@ -137,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    // Ouvinte de evento para os botões de tamanhos
+    //TAMANHOS
     const botaoTamanhos = document.querySelectorAll(".tamanhos7");
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
@@ -146,13 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    // Ouvinte de evento para a opção de quantidade
+    //QUANTIDADE
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
       QuantidadeArray.push(opcaoEscolhida)
     })
   }
 
+
+  //----------------------------------------------------------------------------------------------------
   // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
   let indiceProduto = sessionStorage.length;
   let indiceValor = sessionStorage.length;

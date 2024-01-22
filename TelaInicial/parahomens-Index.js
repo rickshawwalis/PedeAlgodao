@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     indiceTamanhos++;
     sessionStorage.setItem(EscolhaTamanho, TamanhoArray);
 
-    let indiceOpcao = sessionStorage.length;
     //QUANTIDADE
     const EscolhaOpcao = `opcoes_${indiceOpcao}`;
     indiceOpcao++;

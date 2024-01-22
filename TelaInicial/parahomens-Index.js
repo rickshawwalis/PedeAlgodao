@@ -104,25 +104,36 @@ document.addEventListener('click', (ev) => {
 
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
-
+  let CorArray = [];
+  let TamanhoArray = [];
+  let QuantidadeArray = [];
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
-
     let indiceCores = sessionStorage.length;
+    const EscolhaCor = `cores_${indiceCores}`
+    indiceCores++;
+    sessionStorage.setItem(EscolhaCor, CorArray);
+  
+
+
     let indiceTamanhos = sessionStorage.length;
+    const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+    indiceTamanhos++;
+    sessionStorage.setItem(EscolhaTamanho, TamanhoArray);
+ 
+
     let indiceOpcao = sessionStorage.length;
+    const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+    indiceOpcao++;
+    sessionStorage.setItem(EscolhaOpcao, QuantidadeArray);
+    
 
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-
-        if (corModelo) {
-          const EscolhaCor = `cores_${indiceCores}`;
-          sessionStorage.setItem(EscolhaCor, corModelo);
-          indiceCores++;
-        }
+        CorArray.push(corModelo)
       })
     })
 
@@ -131,54 +142,44 @@ document.addEventListener('DOMContentLoaded', () => {
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-
-        if (valorTamanho) {
-          const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
-          sessionStorage.setItem(EscolhaTamanho, valorTamanho);
-          indiceTamanhos++;
-        }
+        TamanhoArray.push(valorTamanho)
       })
     })
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-
-      if (opcaoEscolhida) {
-        const EscolhaOpcao = `opcoes_${indiceOpcao}`;
-        sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
-        indiceOpcao++;
-      }
+      QuantidadeArray.push(opcaoEscolhida)
     })
   }
 
-   // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
   let indiceProduto = sessionStorage.length;
   let indiceValor = sessionStorage.length;
   const NomeValorProduto = () => {
-   
-       // Obtenha a referência do botão usando um seletor mais específico
+
+    // Obtenha a referência do botão usando um seletor mais específico
     const botaoEnviar7 = document.querySelector(".concluir7");
 
     // Verifique se o botão foi encontrado antes de prosseguir
     if (botaoEnviar7) {
-        // Obtenha os atributos do botão
-        const produto = botaoEnviar7.getAttribute('data-text8');
-        const valor = parseFloat(botaoEnviar7.getAttribute('data-value8'));
+      // Obtenha os atributos do botão
+      const produto = botaoEnviar7.getAttribute('data-text8');
+      const valor = parseFloat(botaoEnviar7.getAttribute('data-value8'));
 
-        // Use o índice atual para criar chaves únicas no sessionStorage
-        const TipoProduto = `escolhaProduto_${indiceProduto}`;
-        const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+      // Use o índice atual para criar chaves únicas no sessionStorage
+      const TipoProduto = `escolhaProduto_${indiceProduto}`;
+      const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
 
-        // Incremente os índices para a próxima chamada da função
-        indiceProduto++;
-        indiceValor++;
+      // Incremente os índices para a próxima chamada da função
+      indiceProduto++;
+      indiceValor++;
 
-        // Armazene os novos itens no sessionStorage
-        sessionStorage.setItem(TipoProduto, produto);
-        sessionStorage.setItem(TipoProdutoValor, valor);
-    } 
-};
+      // Armazene os novos itens no sessionStorage
+      sessionStorage.setItem(TipoProduto, produto);
+      sessionStorage.setItem(TipoProdutoValor, valor);
+    }
+  };
 
 
 
@@ -201,11 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/CARRINHO/comprasFeitas.html';
 
   }
-  definirValoresSessionStorage7();
+
   document.querySelector(".concluir7").addEventListener("click", () => {
     concluirCompra7();
     NomeValorProduto();
-  
+    definirValoresSessionStorage7();
   })
 });
 

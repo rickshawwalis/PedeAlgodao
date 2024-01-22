@@ -14,13 +14,13 @@ for (let i = 0; i < sessionStorage.length; i++) {
     const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
     const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
 
-    if (
-        escolhaProduto &&
-        escolhaQuantidade &&
-        escolhaCores &&
-        escolhaTamanho &&
-        !isNaN(escolhaValor)
-    ) {
+   // if (
+    //    escolhaProduto &&
+    //    escolhaQuantidade &&
+    //    escolhaCores &&
+    //    escolhaTamanho &&
+    //    !isNaN(escolhaValor)
+   //) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
         div.innerHTML =
@@ -32,7 +32,7 @@ for (let i = 0; i < sessionStorage.length; i++) {
             <br> QUANTIDADE: ${escolhaQuantidade}
             `;
         container.appendChild(div);
-    }
+   // }
 }
 
     

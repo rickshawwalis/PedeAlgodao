@@ -107,54 +107,53 @@ document.addEventListener('DOMContentLoaded', () => {
   let CorArray = [];
   let TamanhoArray = [];
   let QuantidadeArray = [];
-
+  
+  // Inicialização de índices fora da função
   let indiceCores = sessionStorage.length;
   let indiceTamanhos = sessionStorage.length;
   let indiceOpcao = sessionStorage.length;
+  
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
-
-    //COR
-    const EscolhaCor = `cores_${indiceCores}`
+    const EscolhaCor = `cores_${indiceCores}`;
     indiceCores++;
-    sessionStorage.setItem(EscolhaCor, CorArray);
-
-    //TAMANHO
+    sessionStorage.setItem(EscolhaCor, JSON.stringify(CorArray));
+   
+  
     const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
     indiceTamanhos++;
-    sessionStorage.setItem(EscolhaTamanho, TamanhoArray);
-
-    //QUANTIDADE
+    sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
+   
+  
     const EscolhaOpcao = `opcoes_${indiceOpcao}`;
     indiceOpcao++;
-    sessionStorage.setItem(EscolhaOpcao, QuantidadeArray);
-
-
-    //CORES
+    sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
+    
+  
+    // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        CorArray.push(corModelo)
-      })
-    })
-
-    //TAMANHOS
+        CorArray.push(corModelo);
+      });
+    });
+  
+    // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos7");
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-        TamanhoArray.push(valorTamanho)
-      })
-    })
-
-    //QUANTIDADE
+        TamanhoArray.push(valorTamanho);
+      });
+    });
+  
+    // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      QuantidadeArray.push(opcaoEscolhida)
-    })
-  }
-
+      QuantidadeArray.push(opcaoEscolhida);
+    });
+  };
 
   //----------------------------------------------------------------------------------------------------
   // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função

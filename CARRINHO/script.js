@@ -10,9 +10,9 @@ for (let i = 0; i < sessionStorage.length; i++) {
 
     const escolhaProduto = sessionStorage.getItem(chaveProduto);
     const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
-    const escolhaCores = sessionStorage.getItem(chaveCores);
-    const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
-    const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
+    const escolhaCores = JSON.parse(sessionStorage.getItem(chaveCores));
+    const escolhaTamanho = JSON.parse(sessionStorage.getItem(chaveTamanho));
+    const escolhaQuantidade = JSON.parse(sessionStorage.getItem(chaveQuantidade));
 
    // if (
     //    escolhaProduto &&

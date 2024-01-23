@@ -115,9 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
-
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
+    CorArray = [];
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos7");
+    TamanhoArray = [];
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Ouvinte de evento para a opção de quantidade
+    QuantidadeArray = [];
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
       QuantidadeArray.push(opcaoEscolhida);

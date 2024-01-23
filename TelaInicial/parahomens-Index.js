@@ -107,29 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let CorArray = [];
   let TamanhoArray = [];
   let QuantidadeArray = [];
-  
+
   // Inicialização de índices fora da função
   let indiceCores = sessionStorage.length;
   let indiceTamanhos = sessionStorage.length;
   let indiceOpcao = sessionStorage.length;
-  
+
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
-    const EscolhaCor = `cores_${indiceCores}`;
-    indiceCores++;
-    sessionStorage.setItem(EscolhaCor, JSON.stringify(CorArray));
-   
-  
-    const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
-    indiceTamanhos++;
-    sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
-   
-  
-    const EscolhaOpcao = `opcoes_${indiceOpcao}`;
-    indiceOpcao++;
-    sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
-    
-  
+
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
     botaoModelos.forEach(corModelos => {
@@ -138,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         CorArray.push(corModelo);
       });
     });
-  
+
     // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos7");
     botaoTamanhos.forEach(tamanho => {
@@ -147,12 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
         TamanhoArray.push(valorTamanho);
       });
     });
-  
+
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes7').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
       QuantidadeArray.push(opcaoEscolhida);
     });
+
+    const EscolhaCor = `cores_${indiceCores}`;
+    sessionStorage.setItem(EscolhaCor, JSON.stringify(CorArray));
+    indiceCores++;
+
+    const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+    sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
+    indiceTamanhos++;
+
+    const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+    sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
+    indiceOpcao++;
   };
 
   //----------------------------------------------------------------------------------------------------

@@ -14,6 +14,20 @@ for (let i = 0; i < sessionStorage.length; i++) {
     const escolhaTamanho = JSON.parse(sessionStorage.getItem(chaveTamanho));
     const escolhaQuantidade = JSON.parse(sessionStorage.getItem(chaveQuantidade));
 
+
+    // Exibir ACOMPANHAMENTOS---------------------------------------------------
+  function formatarObjetoParaString(objeto) {
+    return Array.isArray(objeto) ? formatarEscolhas(objeto) : JSON.stringify(objeto, null, 2);
+  }
+
+  function formatarEscolha(escolha) {
+    return `${escolha.texto}: ${parseFloat(escolha.valor).toFixed(2)}`;
+  }
+
+  function formatarEscolhas(escolhas) {
+    return escolhas.map(formatarEscolha).join('<br>');
+  }
+
    // if (
     //    escolhaProduto &&
     //    escolhaQuantidade &&
@@ -25,11 +39,11 @@ for (let i = 0; i < sessionStorage.length; i++) {
         div.setAttribute("class", "mercadoria");
         div.innerHTML =
             `
-            <br> PRODUTO: ${escolhaProduto}
-            <br> VALOR: ${escolhaValor}
-            <br> CORES: ${escolhaCores}
-            <br> TAMANHOS: ${escolhaTamanho}
-            <br> QUANTIDADE: ${escolhaQuantidade}
+            <br> PRODUTO: ${formatarObjetoParaString(escolhaProduto)}
+            <br> VALOR: ${formatarObjetoParaString(escolhaValor)}
+            <br> CORES: ${formatarObjetoParaString(escolhaCores)}
+            <br> TAMANHOS: ${formatarObjetoParaString(escolhaTamanho)}
+            <br> QUANTIDADE: ${formatarObjetoParaString(escolhaQuantidade)}
             `;
         container.appendChild(div);
    // }

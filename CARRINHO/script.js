@@ -1,21 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.teste');
-
+  const container = document.querySelector('.conteudo');
+  let somaTotal = 0;
+  
   for (let i = 0; i < sessionStorage.length; i++) {
     const chaveProduto = `escolhaProduto_${i}`;
     const chaveValor = `escolhaProdutoValor_${i}`;
     const chaveCores = `cores_${i}`;
     const chaveTamanho = `tamanhos_${i}`;
     const chaveQuantidade = `opcoes_${i}`;
-
+  
     const escolhaProduto = sessionStorage.getItem(chaveProduto);
     const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
     const escolhaCores = sessionStorage.getItem(chaveCores);
     const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
     const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
-
-
-
+  
     if (
       escolhaProduto &&
       escolhaQuantidade &&
@@ -23,20 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
       escolhaTamanho &&
       !isNaN(escolhaValor)
     ) {
+      somaTotal += escolhaValor * escolhaQuantidade;
+      
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
       div.innerHTML =
         `
-            <br> PRODUTO: ${escolhaProduto}
-            <br> VALOR: ${escolhaValor}
-            <br> COR: ${escolhaCores}
-            <br> TAMANHO: ${escolhaTamanho}
-            <br> QUANTIDADE (PAR): ${escolhaQuantidade}
-            `;
+            <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
+            <br> <span style="font-weight: bold;">VALOR:</span> R$ ${escolhaValor.toFixed(2)}
+            <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
+            <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
+            <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
+                     `;
       container.appendChild(div);
     }
   }
-
+  
+  // Atualiza o valor total no documento
+  document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL:</span> R$ ${somaTotal.toFixed(2)}`;
+  
+  
 
 
   //     function enviarZap() {

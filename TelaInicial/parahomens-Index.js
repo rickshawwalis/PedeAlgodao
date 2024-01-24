@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage7 = () => {
+  const definirValoresSessionStorage = () => {
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
 
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  const concluirCompra7 = () => {
+  const concluirCompra = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores7:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos7:active');
@@ -219,9 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/CARRINHO/comprasFeitas.html';
 
   }
-  definirValoresSessionStorage7();
+  definirValoresSessionStorage();
   document.querySelector(".concluir7").addEventListener("click", () => {
-    concluirCompra7();
+    concluirCompra();
     NomeValorProduto();
 
   })

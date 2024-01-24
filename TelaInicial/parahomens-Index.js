@@ -104,10 +104,6 @@ document.addEventListener('click', (ev) => {
 
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
-  let CorArray = [];
-  // let TamanhoArray = [];
-  // let QuantidadeArray = [];
-
   // Inicialização de índices fora da função
   let indiceCores = sessionStorage.length;
   // let indiceTamanhos = sessionStorage.length;
@@ -117,16 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const definirValoresSessionStorage7 = () => {
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores7");
-    CorArray = [];
+
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        CorArray.push(corModelo);
-        console.log(CorArray)
-        const reverArray = CorArray.slice().reverse();
         const EscolhaCor = `cores_${indiceCores}`;
-        sessionStorage.setItem(EscolhaCor, JSON.stringify(reverArray));
-        //indiceCores++;
+        sessionStorage.setItem(EscolhaCor, corModelo);
       });
     });
 

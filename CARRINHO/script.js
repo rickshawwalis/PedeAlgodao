@@ -1,57 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.conteudo');
   let somaTotal = 0;
-
-  const Apagar = (ev) => {
+  
+  const Apagar = (div) => {
     let excluir = document.createElement('button');
     excluir.setAttribute("class", "excluirItem");
     excluir.innerHTML = "REMOVER";
-    ev.appendChild(excluir);
-
+    div.appendChild(excluir);
+  
     excluir.addEventListener('click', function () {
-      ev.remove();
+      container.removeChild(div); // Remove a div que contém o botão
     });
   };
-
+  
   for (let i = 0; i < sessionStorage.length; i++) {
     const chaveProduto = `escolhaProduto_${i}`;
     const chaveValor = `escolhaProdutoValor_${i}`;
     const chaveCores = `cores_${i}`;
     const chaveTamanho = `tamanhos_${i}`;
     const chaveQuantidade = `opcoes_${i}`;
-
+  
     const escolhaProduto = sessionStorage.getItem(chaveProduto);
     const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
     const escolhaCores = sessionStorage.getItem(chaveCores);
     const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
     const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
-
+  
     if (escolhaProduto && escolhaQuantidade && escolhaCores && escolhaTamanho && !isNaN(escolhaValor)) {
       somaTotal += escolhaValor * escolhaQuantidade;
-
+  
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
-
-      Apagar(container);
+  
       div.innerHTML =
         `
-            <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
-            <br> <span style="font-weight: bold;">VALOR:</span> R$ ${escolhaValor.toFixed(2)}
-            <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
-            <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
-            <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
-                     `;
-
+          <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
+          <br> <span style="font-weight: bold;">VALOR:</span> R$ ${escolhaValor.toFixed(2)}
+          <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
+          <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
+          <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
+        `;
+  
       container.appendChild(div);
+  
+      Apagar(div); // Chame a função Apagar após adicionar a div ao DOM
     }
   }
-
-
-
+  
   // Atualiza o valor total no documento
   document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL:</span> R$ ${somaTotal.toFixed(2)}`;
-
-
+  
 
 
 

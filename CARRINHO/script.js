@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     excluir.setAttribute("class", "excluirItem");
     excluir.innerHTML = "REMOVER";
     ev.appendChild(excluir);
-    
+
+    excluir.addEventListener('click', function () {
+      ev.remove();
+    });
   };
 
   for (let i = 0; i < sessionStorage.length; i++) {
@@ -43,12 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.addEventListener('click', function (e) {
-    const el = e.target;
-    if (el.classList.contains('excluirItem')) {
-      el.parentElement.remove();
-    }
-  });
+
 
   // Atualiza o valor total no documento
   document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL:</span> R$ ${somaTotal.toFixed(2)}`;

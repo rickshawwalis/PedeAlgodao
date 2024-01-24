@@ -13,14 +13,21 @@ section {
     gap: 10px;
 }
 
+/*Título h1*/
 .detalhamento {
     max-width: 400px;
     width: 380px;
     display: flex;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
 button{
-    margin: 100px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 20px 20px;
     background-color: #96206F;
@@ -41,5 +48,13 @@ button{
 }
 
 h1{
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+}
+
+.mercadoria{
+  box-shadow: 1px 1px 3px 3px #96206F;
+  width: 300px;
+  height: 150px;
+  margin-bottom: 20px;
+
 }

@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.conteudo');
   let somaTotal = 0;
 
+  const Apagar = (ev) => {
+    let excluir = document.createElement('button');
+    excluir.setAttribute("class", "excluirItem");
+    excluir.innerHTML = "REMOVER";
+    ev.appendChild(excluir);
+    
+  };
+
   for (let i = 0; i < sessionStorage.length; i++) {
     const chaveProduto = `escolhaProduto_${i}`;
     const chaveValor = `escolhaProdutoValor_${i}`;
@@ -20,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
+
+      Apagar(container);
       div.innerHTML =
         `
             <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
@@ -28,12 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
             <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
             <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
                      `;
+
       container.appendChild(div);
     }
   }
 
+  document.addEventListener('click', function (e) {
+    const el = e.target;
+    if (el.classList.contains('excluirItem')) {
+      el.parentElement.remove();
+    }
+  });
+
   // Atualiza o valor total no documento
   document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL:</span> R$ ${somaTotal.toFixed(2)}`;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

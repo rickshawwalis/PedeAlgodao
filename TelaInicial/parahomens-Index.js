@@ -105,13 +105,13 @@ document.addEventListener('click', (ev) => {
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
   let CorArray = [];
-  let TamanhoArray = [];
-  let QuantidadeArray = [];
+  // let TamanhoArray = [];
+  // let QuantidadeArray = [];
 
   // Inicialização de índices fora da função
   let indiceCores = sessionStorage.length;
-  let indiceTamanhos = sessionStorage.length;
-  let indiceOpcao = sessionStorage.length;
+  // let indiceTamanhos = sessionStorage.length;
+  // let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
@@ -122,37 +122,41 @@ document.addEventListener('DOMContentLoaded', () => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
         CorArray.push(corModelo);
+        console.log(CorArray)
+        const reverArray = CorArray.slice().reverse();
+        const EscolhaCor = `cores_${indiceCores}`;
+        sessionStorage.setItem(EscolhaCor, JSON.stringify(reverArray));
+        //indiceCores++;
       });
     });
 
-    // Ouvinte de evento para os botões de tamanhos
-    const botaoTamanhos = document.querySelectorAll(".tamanhos7");
-    TamanhoArray = [];
-    botaoTamanhos.forEach(tamanho => {
-      tamanho.addEventListener("click", () => {
-        const valorTamanho = tamanho.value;
-        TamanhoArray.push(valorTamanho);
-      });
-    });
 
-    // Ouvinte de evento para a opção de quantidade
-    QuantidadeArray = [];
-    document.getElementById('opcoes7').addEventListener('change', function () {
-      const opcaoEscolhida = this.value;
-      QuantidadeArray.push(opcaoEscolhida);
-    });
+    // // Ouvinte de evento para os botões de tamanhos
+    // const botaoTamanhos = document.querySelectorAll(".tamanhos7");
+    // TamanhoArray = [];
+    // botaoTamanhos.forEach(tamanho => {
+    //   tamanho.addEventListener("click", () => {
+    //     const valorTamanho = tamanho.value;
+    //     TamanhoArray.push(valorTamanho);
+    //   });
+    // });
 
-    const EscolhaCor = `cores_${indiceCores}`;
-    sessionStorage.setItem(EscolhaCor, JSON.stringify(CorArray));
-    indiceCores++;
+    // // Ouvinte de evento para a opção de quantidade
+    // QuantidadeArray = [];
+    // document.getElementById('opcoes7').addEventListener('change', function () {
+    //   const opcaoEscolhida = this.value;
+    //   QuantidadeArray.push(opcaoEscolhida);
+    // });
 
-    const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
-    sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
-    indiceTamanhos++;
 
-    const EscolhaOpcao = `opcoes_${indiceOpcao}`;
-    sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
-    indiceOpcao++;
+
+    //   const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+    //   sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
+    //   indiceTamanhos++;
+
+    //   const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+    //   sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
+    //   indiceOpcao++;
   };
 
   //----------------------------------------------------------------------------------------------------
@@ -205,11 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/CARRINHO/comprasFeitas.html';
 
   }
-
+  definirValoresSessionStorage7();
   document.querySelector(".concluir7").addEventListener("click", () => {
     concluirCompra7();
     NomeValorProduto();
-    definirValoresSessionStorage7();
+
   })
 });
 

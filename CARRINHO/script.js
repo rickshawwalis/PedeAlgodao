@@ -10,31 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const escolhaProduto = sessionStorage.getItem(chaveProduto);
     const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
-    const escolhaCores = JSON.parse(sessionStorage.getItem(chaveCores));
-    const escolhaTamanho = JSON.parse(sessionStorage.getItem(chaveTamanho));
-    const escolhaQuantidade = JSON.parse(sessionStorage.getItem(chaveQuantidade));
+    const escolhaCores = sessionStorage.getItem(chaveCores);
+    const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
+    const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
 
 
 
-    // if (
-    //    escolhaProduto &&
-    //    escolhaQuantidade &&
-    //    escolhaCores &&
-    //    escolhaTamanho &&
-    //    !isNaN(escolhaValor)
-    //) {
-    let div = document.createElement('div');
-    div.setAttribute("class", "mercadoria");
-    div.innerHTML =
-      `
+    if (
+      escolhaProduto &&
+      escolhaQuantidade &&
+      escolhaCores &&
+      escolhaTamanho &&
+      !isNaN(escolhaValor)
+    ) {
+      let div = document.createElement('div');
+      div.setAttribute("class", "mercadoria");
+      div.innerHTML =
+        `
             <br> PRODUTO: ${escolhaProduto}
             <br> VALOR: ${escolhaValor}
-            <br> CORES: ${escolhaCores}
-            <br> TAMANHOS: ${escolhaTamanho}
-            <br> QUANTIDADE: ${escolhaQuantidade}
+            <br> COR: ${escolhaCores}
+            <br> TAMANHO: ${escolhaTamanho}
+            <br> QUANTIDADE (PAR): ${escolhaQuantidade}
             `;
-    container.appendChild(div);
-    // }
+      container.appendChild(div);
+    }
   }
 
 

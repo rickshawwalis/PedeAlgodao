@@ -106,8 +106,8 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
   // Inicialização de índices fora da função
   let indiceCores = sessionStorage.length;
-  // let indiceTamanhos = sessionStorage.length;
-  // let indiceOpcao = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage7 = () => {
@@ -119,36 +119,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const corModelo = corModelos.value;
         const EscolhaCor = `cores_${indiceCores}`;
         sessionStorage.setItem(EscolhaCor, corModelo);
+         });
+    });
+
+    // Ouvinte de evento para os botões de tamanhos
+    const botaoTamanhos = document.querySelectorAll(".tamanhos7");
+    botaoTamanhos.forEach(tamanho => {
+      tamanho.addEventListener("click", () => {
+        const valorTamanho = tamanho.value;
+        const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
       });
     });
 
-
-    // // Ouvinte de evento para os botões de tamanhos
-    // const botaoTamanhos = document.querySelectorAll(".tamanhos7");
-    // TamanhoArray = [];
-    // botaoTamanhos.forEach(tamanho => {
-    //   tamanho.addEventListener("click", () => {
-    //     const valorTamanho = tamanho.value;
-    //     TamanhoArray.push(valorTamanho);
-    //   });
-    // });
-
-    // // Ouvinte de evento para a opção de quantidade
-    // QuantidadeArray = [];
-    // document.getElementById('opcoes7').addEventListener('change', function () {
-    //   const opcaoEscolhida = this.value;
-    //   QuantidadeArray.push(opcaoEscolhida);
-    // });
-
-
-
-    //   const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
-    //   sessionStorage.setItem(EscolhaTamanho, JSON.stringify(TamanhoArray));
-    //   indiceTamanhos++;
-
-    //   const EscolhaOpcao = `opcoes_${indiceOpcao}`;
-    //   sessionStorage.setItem(EscolhaOpcao, JSON.stringify(QuantidadeArray));
-    //   indiceOpcao++;
+    // Ouvinte de evento para a opção de quantidade
+    document.getElementById('opcoes7').addEventListener('change', function () {
+      const opcaoEscolhida = this.value;
+      const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+    });
   };
 
   //----------------------------------------------------------------------------------------------------
@@ -169,10 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Use o índice atual para criar chaves únicas no sessionStorage
       const TipoProduto = `escolhaProduto_${indiceProduto}`;
       const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
-
-      // Incremente os índices para a próxima chamada da função
-      indiceProduto++;
-      indiceValor++;
 
       // Armazene os novos itens no sessionStorage
       sessionStorage.setItem(TipoProduto, produto);

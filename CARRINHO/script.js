@@ -31,14 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
+
+      const soma = escolhaValor * escolhaQuantidade
   
       div.innerHTML =
         `
           <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
-          <br> <span style="font-weight: bold;">VALOR:</span> R$ ${escolhaValor.toFixed(2)}
+          <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
           <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
           <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
           <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
+          <br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
         `;
   
       container.appendChild(div);
@@ -48,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Atualiza o valor total no documento
-  document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL:</span> R$ ${somaTotal.toFixed(2)}`;
+  document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL GERAL:</span> R$ ${somaTotal.toFixed(2)}`;
   
 
 

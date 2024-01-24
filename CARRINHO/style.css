@@ -54,7 +54,7 @@ h1 {
 .mercadoria {
     box-shadow: 1px 1px 3px 3px #96206F;
     width: 300px;
-    height: 150px;
+    height: 200px;
     margin-bottom: 20px;
 
 }
@@ -68,3 +68,17 @@ text-align: center;
     font-weight:900;
     margin: 30px 0px 30px 0px;
 }
+
+.excluirItem{
+      background: none;
+    color: #96206F;
+    border: none;
+    display: flex;
+    margin: auto;    
+}
+
+.excluirItem:hover{
+    color: red;
+}
+
+    

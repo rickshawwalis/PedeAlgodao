@@ -20,13 +20,13 @@ section {
     display: flex;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 
-button{
+button {
     margin: 0px 0px 20px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 20px 20px;
@@ -39,22 +39,32 @@ button{
     border: 1px solid black;
 }
 
-.logo{
+.logo {
     margin: auto;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
 }
 
-h1{
+h1 {
     margin-bottom: 10px;
 }
 
-.mercadoria{
-  box-shadow: 1px 1px 3px 3px #96206F;
-  width: 300px;
-  height: 150px;
-  margin-bottom: 20px;
+.mercadoria {
+    box-shadow: 1px 1px 3px 3px #96206F;
+    width: 300px;
+    height: 150px;
+    margin-bottom: 20px;
 
+}
+
+.conteudo{
+text-align: center;
+}
+
+.valor{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:900;
+    margin: 30px 0px 30px 0px;
 }

@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
       div.innerHTML =
         `
-          <br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
+          <br><br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
           <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
           <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
           <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
           <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
-          <br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
+          <br><br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
         `;
   
       container.appendChild(div);

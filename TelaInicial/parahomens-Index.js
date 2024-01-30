@@ -40,7 +40,7 @@ const cancelar7 = () => {
   }
   tituloA3.scrollIntoView({ behavior: 'smooth' })
   limparSelecoes7()
-  removerSessionStorage()
+ // removerSessionStorage()
 }
 
 
@@ -103,33 +103,33 @@ document.addEventListener('click', (ev) => {
   }
 });
 
-const removerSessionStorage = () => {
-  const Cores = document.querySelectorAll(".cores7");
-  const Tamanhos = document.querySelectorAll(".tamanhos7");
-  const Opcoes = document.querySelector("#opcoes7");
+// const removerSessionStorage = () => {
+//   const Cores = document.querySelectorAll(".cores7");
+//   const Tamanhos = document.querySelectorAll(".tamanhos7");
+//   const Opcoes = document.querySelector("#opcoes7");
 
-  // Lógica para remover os itens do sessionStorage
-  if (Cores.length > 0) {
-    for (let i = 0; i < Cores.length; i++) {
-      const Cor = `cores_${i}`;
-      sessionStorage.removeItem(Cor);
-    }
-  }
+//   // Lógica para remover os itens do sessionStorage
+//   if (Cores.length > 0) {
+//     for (let i = 0; i < Cores.length; i++) {
+//       const Cor = `cores_${i}`;
+//       sessionStorage.removeItem(Cor);
+//     }
+//   }
 
-  if (Tamanhos.length > 0) {
-    for (let i = 0; i < Tamanhos.length; i++) {
-      const Tamanho = `tamanhos_${i}`;
-      sessionStorage.removeItem(Tamanho);
-    }
-  }
+//   if (Tamanhos.length > 0) {
+//     for (let i = 0; i < Tamanhos.length; i++) {
+//       const Tamanho = `tamanhos_${i}`;
+//       sessionStorage.removeItem(Tamanho);
+//     }
+//   }
 
-  if (Opcoes.length > 0) {
-    for (let i = 0; i < Opcoes.length; i++) {
-      const Opcao = `opcoes_${i}`;
-      sessionStorage.removeItem(Opcao);
-    }
-  }
-};
+//   if (Opcoes.length > 0) {
+//     for (let i = 0; i < Opcoes.length; i++) {
+//       const Opcao = `opcoes_${i}`;
+//       sessionStorage.removeItem(Opcao);
+//     }
+//   }
+// };
 
 
 

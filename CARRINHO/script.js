@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.conteudo');
   let somaTotal = 0;
   
-  const Apagar = (div) => {
+  const Apagar = (div, chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade) => {
     let excluir = document.createElement('button');
     excluir.setAttribute("class", "excluirItem");
     excluir.innerHTML = "REMOVER";
@@ -10,7 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
     excluir.addEventListener('click', function () {
       container.removeChild(div); // Remove a div que contém o botão
+      removerSessionStorage(chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade); // Chama a função para remover do sessionStorage
     });
+  };
+  
+  const removerSessionStorage = (chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade) => {
+    sessionStorage.removeItem(chaveProduto);
+    sessionStorage.removeItem(chaveValor);
+    sessionStorage.removeItem(chaveCores);
+    sessionStorage.removeItem(chaveTamanho);
+    sessionStorage.removeItem(chaveQuantidade);
   };
   
   for (let i = 0; i < sessionStorage.length; i++) {
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
-
+  
       const soma = escolhaValor * escolhaQuantidade
   
       div.innerHTML =
@@ -46,13 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
       container.appendChild(div);
   
-      Apagar(div); // Chame a função Apagar após adicionar a div ao DOM
+      Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade); // Passa a chave correspondente ao item do sessionStorage para a função Apagar
     }
   }
   
+
   // Atualiza o valor total no documento
   document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL GERAL:</span> R$ ${somaTotal.toFixed(2)}`;
-  
+
 
 
 

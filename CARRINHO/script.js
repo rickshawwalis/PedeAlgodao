@@ -9,6 +9,7 @@ const Apagar = (div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQu
   div.appendChild(excluir);
 
   excluir.addEventListener('click', function () {
+    //multiplica para depois subtrair o valor que foi excluido
     const valorDivRemovida = parseFloat(sessionStorage.getItem(chaveValor)) * parseFloat(sessionStorage.getItem(chaveQuantidade));
     
     container.removeChild(div); // Remove a div que contém o botão
@@ -34,46 +35,50 @@ const calcular = (escolhaValor, escolhaQuantidade) => {
   somaTotal += escolhaValor * escolhaQuantidade;
 };
 
-for (let i = 0; i < sessionStorage.length; i++) {
-  const chaveProduto = `escolhaProduto_${i}`;
-  const chaveValor = `escolhaProdutoValor_${i}`;
-  const chaveCores = `cores_${i}`;
-  const chaveTamanho = `tamanhos_${i}`;
-  const chaveQuantidade = `opcoes_${i}`;
-
-  const escolhaProduto = sessionStorage.getItem(chaveProduto);
-  const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
-  const escolhaCores = sessionStorage.getItem(chaveCores);
-  const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
-  const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
-
-  if (escolhaProduto && escolhaQuantidade && escolhaCores && escolhaTamanho && !isNaN(escolhaValor)) {
-    let div = document.createElement('div');
-    div.setAttribute("class", "mercadoria");
-
-    calcular(escolhaValor, escolhaQuantidade);
-    const soma = escolhaValor * escolhaQuantidade;
-
-    div.innerHTML =
-      `
-        <br><br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
-        <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
-        <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
-        <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
-        <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
-        <br><br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
-      `;
-
-    container.appendChild(div);
-
-    Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
+const CriaDiv=()=>{
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const chaveProduto = `escolhaProduto_${i}`;
+    const chaveValor = `escolhaProdutoValor_${i}`;
+    const chaveCores = `cores_${i}`;
+    const chaveTamanho = `tamanhos_${i}`;
+    const chaveQuantidade = `opcoes_${i}`;
+  
+    const escolhaProduto = sessionStorage.getItem(chaveProduto);
+    const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
+    const escolhaCores = sessionStorage.getItem(chaveCores);
+    const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
+    const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
+  
+    if (escolhaProduto && escolhaQuantidade && escolhaCores && escolhaTamanho && !isNaN(escolhaValor)) {
+      let div = document.createElement('div');
+      div.setAttribute("class", "mercadoria");
+  
+      calcular(escolhaValor, escolhaQuantidade);
+      const soma = escolhaValor * escolhaQuantidade;
+  
+      div.innerHTML =
+        `
+          <br><br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
+          <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
+          <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
+          <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
+          <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
+          <br><br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
+        `;
+  
+      container.appendChild(div);
+  
+      Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
+    }
   }
+  
+
+
 }
 
 // Atualiza o valor total no documento
 document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL GERAL:</span> R$ ${somaTotal.toFixed(2)}`;
-
-
+CriaDiv()
 
 
 

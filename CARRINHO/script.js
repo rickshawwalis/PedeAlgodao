@@ -58,7 +58,7 @@ const CriaDiv=()=>{
   
       div.innerHTML =
         `
-          <br><br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}
+          <br><br> <span style="font-weight: bold;">SANDÁLIA:</span> ${escolhaProduto}
           <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
           <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
           <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
@@ -67,8 +67,7 @@ const CriaDiv=()=>{
         `;
   
       container.appendChild(div);
-  
-      Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
+            Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
     }
   }
   
@@ -82,19 +81,8 @@ document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">V
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function enviarZap() {
-  let textoParaEnviar = ''; // Initialize the variable outside the loop
+  let textoParaEnviar = ''; 
 
   for (let i = 0; i < sessionStorage.length; i++) {
     const chaveProduto = `escolhaProduto_${i}`;
@@ -109,15 +97,20 @@ function enviarZap() {
     const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
     const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
 
-    // Append details to textoParaEnviar inside the loop
-    textoParaEnviar += `
-      *PRODUTO:* ${escolhaProduto}
+
+    if (escolhaProduto && escolhaQuantidade && escolhaCores && escolhaTamanho && !isNaN(escolhaValor)){
+      const soma = escolhaValor * escolhaQuantidade;
+      textoParaEnviar += `
+      \n*SANDÁLIA:* ${escolhaProduto}
       *VALOR:* R$ ${escolhaValor}
       *COR:* ${escolhaCores}
       *TAMANHO:* ${escolhaTamanho}
       *QUANTIDADE:* ${escolhaQuantidade}
+      *VALOR TOTAL:* ${soma}
     `;
-  }
+    }
+      }
+      textoParaEnviar +=`\n*VALOR TOTAL GERAL:* ${somaTotal}`
 
   const codigoPais = '55';
   const numeroTelefone = '87991614277';

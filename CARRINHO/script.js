@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     excluir.addEventListener('click', function () {
       container.removeChild(div); // Remove a div que contém o botão
-      removerSessionStorage(chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade); // Chama a função para remover do sessionStorage
-    });
+        removerSessionStorage(chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade); // Chama a função para remover do sessionStorage
+          });
   };
   
   const removerSessionStorage = (chaveProduto, chaveValor, chaveCores, chaveTamanho,chaveQuantidade) => {
@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.removeItem(chaveTamanho);
     sessionStorage.removeItem(chaveQuantidade);
   };
+ 
+  const calcular =(escolhaValor,escolhaQuantidade)=>{
+    somaTotal += escolhaValor * escolhaQuantidade;
+    }
   
   for (let i = 0; i < sessionStorage.length; i++) {
     const chaveProduto = `escolhaProduto_${i}`;
@@ -36,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
   
     if (escolhaProduto && escolhaQuantidade && escolhaCores && escolhaTamanho && !isNaN(escolhaValor)) {
-      somaTotal += escolhaValor * escolhaQuantidade;
-  
+     
       let div = document.createElement('div');
       div.setAttribute("class", "mercadoria");
-  
-      const soma = escolhaValor * escolhaQuantidade
-  
+//faz o calculo
+      calcular(escolhaValor,escolhaQuantidade)
+      const soma = escolhaValor * escolhaQuantidade;
+
       div.innerHTML =
         `
           <br><br> <span style="font-weight: bold;">PRODUTO:</span> ${escolhaProduto}

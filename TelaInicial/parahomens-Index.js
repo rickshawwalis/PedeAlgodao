@@ -131,10 +131,6 @@ document.addEventListener('click', (ev) => {
 //   }
 // };
 
-
-
-
-
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
   // Inicialização de índices fora da função

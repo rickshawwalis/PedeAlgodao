@@ -77,8 +77,8 @@ const CriaDiv=()=>{
 }
 
 // Atualiza o valor total no documento
-document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL GERAL:</span> R$ ${somaTotal.toFixed(2)}`;
 CriaDiv()
+document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR TOTAL GERAL:</span> R$ ${somaTotal.toFixed(2)}`;
 
 
 
@@ -92,22 +92,42 @@ CriaDiv()
 
 
 
-  //     function enviarZap() {
-  //         const textoParaEnviar = `
-  //     *PRODUTO:* ${nomeModelo}
-  //     *VALOR:* R$ ${valorModelo}
-  //     *COR:* ${cor}
-  //     *TAMANHO:* ${tamanho}
-  //     *QUANTIDADE:* ${quantidade}
-  //     `
-  //         const codigoPais = '55';
-  //         const numeroTelefone = '87991614277';
 
-  //         const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
-  //         window.open(linkWhatsApp, '_blank');
-  //     }
+function enviarZap() {
+  let textoParaEnviar = ''; // Initialize the variable outside the loop
 
-  //     let botaoFinalizar = document.querySelector("#finalizar") //ativa o botão de enviar os dados via zap
-  //     botaoFinalizar.addEventListener("click", enviarZap)
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const chaveProduto = `escolhaProduto_${i}`;
+    const chaveValor = `escolhaProdutoValor_${i}`;
+    const chaveCores = `cores_${i}`;
+    const chaveTamanho = `tamanhos_${i}`;
+    const chaveQuantidade = `opcoes_${i}`;
+
+    const escolhaProduto = sessionStorage.getItem(chaveProduto);
+    const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
+    const escolhaCores = sessionStorage.getItem(chaveCores);
+    const escolhaTamanho = sessionStorage.getItem(chaveTamanho);
+    const escolhaQuantidade = parseFloat(sessionStorage.getItem(chaveQuantidade));
+
+    // Append details to textoParaEnviar inside the loop
+    textoParaEnviar += `
+      *PRODUTO:* ${escolhaProduto}
+      *VALOR:* R$ ${escolhaValor}
+      *COR:* ${escolhaCores}
+      *TAMANHO:* ${escolhaTamanho}
+      *QUANTIDADE:* ${escolhaQuantidade}
+    `;
+  }
+
+  const codigoPais = '55';
+  const numeroTelefone = '87991614277';
+
+  const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
+  window.open(linkWhatsApp, '_blank');
+}
+
+
+      let botaoFinalizar = document.querySelector("#finalizar") //ativa o botão de enviar os dados via zap
+      botaoFinalizar.addEventListener("click", enviarZap)
 });
 

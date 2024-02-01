@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const container = document.querySelector('.conteudo');
 let somaTotal = 0;
 
-const Apagar = (div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade) => {
+const Apagar = (div, chaveProduto, chaveValor,chaveQuantidade) => {
   let excluir = document.createElement('button');
   excluir.setAttribute("class", "excluirItem");
   excluir.innerHTML = "REMOVER";
@@ -13,7 +13,7 @@ const Apagar = (div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQu
     const valorDivRemovida = parseFloat(sessionStorage.getItem(chaveValor)) * parseFloat(sessionStorage.getItem(chaveQuantidade));
     
     container.removeChild(div); // Remove a div que contém o botão
-    removerSessionStorage(chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
+    removerSessionStorage(chaveProduto, chaveValor);
 
     // Subtrai o valor da div removida do somaTotal
     somaTotal -= valorDivRemovida;
@@ -23,12 +23,9 @@ const Apagar = (div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQu
   });
 };
 
-const removerSessionStorage = (chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade) => {
+const removerSessionStorage = (chaveProduto, chaveValor) => {
   sessionStorage.removeItem(chaveProduto);
   sessionStorage.removeItem(chaveValor);
-  sessionStorage.removeItem(chaveCores);
-  sessionStorage.removeItem(chaveTamanho);
-  sessionStorage.removeItem(chaveQuantidade);
 };
 
 const calcular = (escolhaValor, escolhaQuantidade) => {
@@ -67,7 +64,7 @@ const CriaDiv=()=>{
         `;
   
       container.appendChild(div);
-            Apagar(div, chaveProduto, chaveValor, chaveCores, chaveTamanho, chaveQuantidade);
+            Apagar(div, chaveProduto, chaveValor,chaveQuantidade);
     }
   }
   

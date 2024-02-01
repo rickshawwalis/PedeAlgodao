@@ -99,15 +99,15 @@ function enviarZap() {
       const soma = escolhaValor * escolhaQuantidade;
       textoParaEnviar += `
       \n*SANDÁLIA:* ${escolhaProduto}
-      *VALOR:* R$ ${escolhaValor}
+      *VALOR:* R$ ${escolhaValor.toFixed(2)}
       *COR:* ${escolhaCores}
       *TAMANHO:* ${escolhaTamanho}
-      *QUANTIDADE:* ${escolhaQuantidade}
-      *VALOR TOTAL:* ${soma}
+      *QUANTIDADE (PAR):* ${escolhaQuantidade}
+      *VALOR TOTAL:* R$ ${soma.toFixed(2)}
     `;
     }
       }
-      textoParaEnviar +=`\n*VALOR TOTAL GERAL:* ${somaTotal}`
+      textoParaEnviar +=`\n*VALOR TOTAL GERAL:* * R$ ${somaTotal.toFixed(2)}`
 
   const codigoPais = '55';
   const numeroTelefone = '87991614277';

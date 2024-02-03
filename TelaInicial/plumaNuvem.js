@@ -64,59 +64,59 @@ document.addEventListener('click', (e) => {
 
     if (el.classList.contains("bege")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/lilas.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/lilas.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/lilas.png';
       el.style.backgroundColor = "#A87AA9";
     }
     if (el.classList.contains("preto")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/preta.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/preta.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/preta.png';
       el.style.backgroundColor = "black";
     }
     if (el.classList.contains("amareloouro")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/amareloouro.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/amareloouro.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/amareloouro.png';
       el.style.backgroundColor = "#E0BA12";
     }
     if (el.classList.contains("laranja")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/laranja.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/laranja.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/laranja.png';
       el.style.backgroundColor = "#C84F22";
     }
     if (el.classList.contains("rosabebe")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/rosa.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/rosa.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/rosa.png';
       el.style.backgroundColor = "#E29EAD";
     }
     if (el.classList.contains("branco")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/branca.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/branca.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("azulmarinho")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulmarinho.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulmarinho.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/azulmarinho.png';
       el.style.backgroundColor = "#666F8C";
     }
     if (el.classList.contains("azulclaro")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulbebe.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulbebe.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/azulbebe.png';
       el.style.backgroundColor = "#61A2B0";
     }
     if (el.classList.contains("verdemilitar")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/verdemilitar.png';
       el.style.backgroundColor = "#6F735C";
     }
 
     if (el.classList.contains("nude")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/nude.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/nude.png';
       el.style.backgroundColor = "#E3C9B9";
     }
 
     if (el.classList.contains("neon")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/neon.png';
+      imagem.src = '/lancamentos/img-Index/PLUMANUVEM/neon.png';
       el.style.backgroundColor = "#BCE14F";
     }
     imagemSapato.appendChild(imagem);
@@ -138,44 +138,76 @@ document.addEventListener('click', (ev) => {
   }
 });
 
+  //-------------------------------------------------------------
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicialização de índices fora da função
+  let indiceCores = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
   const definirValoresSessionStorage = () => {
-       // Ouvinte de evento para os botões de modelos (cores)
+    // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores");
+
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
-      })
-    })
+        const EscolhaCor = `cores_${indiceCores}`;
+        sessionStorage.setItem(EscolhaCor, corModelo);
+         });
+    });
 
     // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos");
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
-      })
-    })
+        const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+      });
+    });
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-    })
-  }
+      const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+    });
+  };
 
-  const NomeValorProduto=()=>{
-     // Dados do botão "Concluir"
-     const botaoEnviar = document.querySelector(".concluir");
-     const valorBotaoEnviar = parseFloat(botaoEnviar.getAttribute('data-value1'));
-     const textoBotaoEnviar = botaoEnviar.getAttribute('data-text1');
-     sessionStorage.setItem('valorProduto', valorBotaoEnviar);
-     sessionStorage.setItem('nomeProduto', textoBotaoEnviar);
-  }
+  //----------------------------------------------------------------------------------------------------
+  // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  let indiceProduto = sessionStorage.length;
+  let indiceValor = sessionStorage.length;
+  const NomeValorProduto = () => {
+
+    // Obtenha a referência do botão usando um seletor mais específico
+    const botaoEnviar = document.querySelector(".concluir");
+
+    // Verifique se o botão foi encontrado antes de prosseguir
+    if (botaoEnviar) {
+      // Obtenha os atributos do botão
+      const produto = botaoEnviar.getAttribute('data-text1');
+      const valor = parseFloat(botaoEnviar.getAttribute('data-value1'));
+
+      // Use o índice atual para criar chaves únicas no sessionStorage
+      const TipoProduto = `escolhaProduto_${indiceProduto}`;
+      const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+
+      // Armazene os novos itens no sessionStorage
+      sessionStorage.setItem(TipoProduto, produto);
+      sessionStorage.setItem(TipoProdutoValor, valor);
+    }
+  };
+
+
+
+
+  //-------------------------------------------------------------
+
+
 
   const concluirCompra = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
@@ -188,13 +220,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
     // Redirecionar para a próxima página
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-  }
+   // window.location.href = '/lancamentos/compras/comprasFeitas.html';
+   window.location.href = '/lancamentos/compras/comprasFeitas.html';
 
+  }
   definirValoresSessionStorage();
-  document.querySelector(".concluir").addEventListener("click", ()=>{
-    NomeValorProduto()
-    concluirCompra()
+  document.querySelector(".concluir").addEventListener("click", () => {
+    concluirCompra();
+    NomeValorProduto();
+
   })
 });
-

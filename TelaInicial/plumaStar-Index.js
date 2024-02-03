@@ -25,9 +25,9 @@ const limparSelecoes1 = () => {
   let imagemSapato1 = document.querySelector("#imagemSapato1");
   imagemSapato1.innerHTML = "";
 
-   //limpar opção de quantidade escolhida
-   let select = document.getElementById("opcoes1");
-   select.value = "---";
+  //limpar opção de quantidade escolhida
+  let select = document.getElementById("opcoes1");
+  select.value = "---";
 }
 
 //FECHAR
@@ -61,59 +61,54 @@ document.addEventListener('click', (e) => {
 
     if (el.classList.contains("azul1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/lilas.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/azul.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/azul.png';
       el.style.backgroundColor = "#1845A2";
     }
     if (el.classList.contains("azulmarinho1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/preta.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/azulmarinho.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/azulmarinho.png';
       el.style.backgroundColor = "#313549";
-    }
-    if (el.classList.contains("bege1")) {
-      //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/amareloouro.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/bege.png';
-      el.style.backgroundColor = "#AF79CF";
     }
     if (el.classList.contains("branca1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/laranja.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/branca.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/branca.png';
       el.style.backgroundColor = "white";
     }
     if (el.classList.contains("laranja1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/rosa.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/laranja.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/laranja.png';
       el.style.backgroundColor = "#FC9F5B";
     }
     if (el.classList.contains("marrom1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/branca.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/marrom.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/marrom.png';
       el.style.backgroundColor = "#888063";
     }
     if (el.classList.contains("marromclaro1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulmarinho.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/marromclaro.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/marromclaro.png';
       el.style.backgroundColor = "#B7A285";
     }
     if (el.classList.contains("neon1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/azulbebe.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/neon.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/neon.png';
       el.style.backgroundColor = "#EFFB75";
     }
     if (el.classList.contains("preta1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/preta.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/preta.png';
       el.style.backgroundColor = "black";
     }
 
-    if (el.classList.contains("roxa1")) {
+    if (el.classList.contains("lanvada1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/roxa.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/lavanda.png';
       el.style.backgroundColor = "#A973C9";
     }
 
     if (el.classList.contains("verdemilitar1")) {
       //imagem.src = '/PedeAlgodao/img-Index/PLUMANUVEM/verdemilitar.png';
-      imagem.src = '/PedeAlgodao/img-Index/PLUMASTAR/verdemilitar.png';
+      imagem.src = '/lancamentos/img-Index/PLUMASTAR/verdemilitar.png';
       el.style.backgroundColor = "#505141";
     }
     imagemSapato1.appendChild(imagem);
@@ -135,48 +130,78 @@ document.addEventListener('click', (ev) => {
   }
 });
 
+ //-------------------------------------------------------------
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicialização de índices fora da função
+  let indiceCores = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage6 = () => {
- 
-
+  const definirValoresSessionStorage = () => {
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores1");
+
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
-      })
-    })
+        const EscolhaCor = `cores_${indiceCores}`;
+        sessionStorage.setItem(EscolhaCor, corModelo);
+         });
+    });
 
     // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos1");
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
-      })
-    })
+        const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+      });
+    });
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes1').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-    })
-  }
+      const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+    });
+  };
 
-  const NomeValorProduto=()=>{
-      // Dados do botão "Concluir"
-      const botaoEnviar1= document.querySelector(".concluir1");
-      const valorBotaoEnviar1 = parseFloat(botaoEnviar1.getAttribute('data-value2'));
-      const textoBotaoEnviar1 = botaoEnviar1.getAttribute('data-text2');
-      sessionStorage.setItem('valorProduto', valorBotaoEnviar1);
-      sessionStorage.setItem('nomeProduto', textoBotaoEnviar1);
-  }
+  //----------------------------------------------------------------------------------------------------
+  // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  let indiceProduto = sessionStorage.length;
+  let indiceValor = sessionStorage.length;
+  const NomeValorProduto = () => {
 
-  const concluirCompra6 = () => {
+    // Obtenha a referência do botão usando um seletor mais específico
+    const botaoEnviar = document.querySelector(".concluir1");
+
+    // Verifique se o botão foi encontrado antes de prosseguir
+    if (botaoEnviar) {
+      // Obtenha os atributos do botão
+      const produto = botaoEnviar.getAttribute('data-text2');
+      const valor = parseFloat(botaoEnviar.getAttribute('data-value2'));
+
+      // Use o índice atual para criar chaves únicas no sessionStorage
+      const TipoProduto = `escolhaProduto_${indiceProduto}`;
+      const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+
+      // Armazene os novos itens no sessionStorage
+      sessionStorage.setItem(TipoProduto, produto);
+      sessionStorage.setItem(TipoProdutoValor, valor);
+    }
+  };
+
+
+
+
+  //-------------------------------------------------------------
+
+
+
+  const concluirCompra = () => {
     //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores1:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos1:active');
@@ -184,16 +209,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
       alert("Para prosseguir, escolha: cor, tamanho e quantidade");
-      return false; 
+      return false;
     }
     // Redirecionar para a próxima página
-    //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    window.location.href = '/lancamentos/compras/comprasFeitas.html';
+
   }
-  definirValoresSessionStorage6();
-  document.querySelector(".concluir1").addEventListener("click", ()=>{
+  definirValoresSessionStorage();
+  document.querySelector(".concluir1").addEventListener("click", () => {
+    concluirCompra();
     NomeValorProduto();
-    concluirCompra6();
+
   })
 });
-

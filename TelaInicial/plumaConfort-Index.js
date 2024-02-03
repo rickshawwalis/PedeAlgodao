@@ -60,43 +60,43 @@ const comprar2 = () => {
       imagemSapato2.innerHTML = "";
   
       if (el.classList.contains("amareloouro2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/amarela.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/amarela.jpeg';
         el.style.backgroundColor = "#E0BA12";
       }
       if (el.classList.contains("azul2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/azulbebe.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/azulbebe.jpeg';
         el.style.backgroundColor = "#13C5FF";
       }
       if (el.classList.contains("azulmarinho2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/azulmarinho.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/azulmarinho.jpeg';
         el.style.backgroundColor = "#666F8C";
       }
       if (el.classList.contains("branco2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/branca.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/branca.jpeg';
         el.style.backgroundColor = "white";
       }
       if (el.classList.contains("marromclaro2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/marromclaro.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/marromclaro.jpeg';
         el.style.backgroundColor = "#B8B5AE";
       }
       if (el.classList.contains("neon2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/neon.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/neon.jpeg';
         el.style.backgroundColor = "#BCE14F";
       }
       if (el.classList.contains("nude2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/nude.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/nude.jpeg';
         el.style.backgroundColor = "#E3C9B9";
       }
       if (el.classList.contains("preto2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/preta.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/preta.jpeg';
         el.style.backgroundColor = "black";
       }
       if (el.classList.contains("rosa2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/rosa.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/rosa.jpeg';
         el.style.backgroundColor = "#E29EAD";
       }
       if (el.classList.contains("verdemilitar2")) {
-        imagem.src = '/PedeAlgodao/img-Index/PLUMACONFORT/verdemilitar.jpeg';
+        imagem.src = '/lancamentos/img-Index/PLUMACONFORT/verdemilitar.jpeg';
         el.style.backgroundColor = "#6F735C";
       }
 
@@ -126,48 +126,79 @@ document.addEventListener('click', (ev) => {
 
 
 
+ //-------------------------------------------------------------
 //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicialização de índices fora da função
+  let indiceCores = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
 
   // Lógica para definir valores no sessionStorage
-  const definirValoresSessionStorage2 = () => {
-  
+  const definirValoresSessionStorage = () => {
     // Ouvinte de evento para os botões de modelos (cores)
     const botaoModelos = document.querySelectorAll(".cores2");
+
     botaoModelos.forEach(corModelos => {
       corModelos.addEventListener("click", () => {
         const corModelo = corModelos.value;
-        sessionStorage.setItem('escolhaCor', corModelo);
-      })
-    })
+        const EscolhaCor = `cores_${indiceCores}`;
+        sessionStorage.setItem(EscolhaCor, corModelo);
+         });
+    });
 
     // Ouvinte de evento para os botões de tamanhos
     const botaoTamanhos = document.querySelectorAll(".tamanhos2");
     botaoTamanhos.forEach(tamanho => {
       tamanho.addEventListener("click", () => {
         const valorTamanho = tamanho.value;
-        sessionStorage.setItem('escolhaTamanho', valorTamanho);
-      })
-    })
+        const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+      });
+    });
 
     // Ouvinte de evento para a opção de quantidade
     document.getElementById('opcoes2').addEventListener('change', function () {
       const opcaoEscolhida = this.value;
-      sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-    })
-  }
+      const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+    });
+  };
 
-  const NomeValorProduto =()=>{
-  // Dados do botão "Concluir"
-  const botaoEnviar2 = document.querySelector(".concluir2");
-  const valorBotaoEnviar2 = parseFloat(botaoEnviar2.getAttribute('data-value3'));
-  const textoBotaoEnviar2 = botaoEnviar2.getAttribute('data-text3');
-  sessionStorage.setItem('valorProduto', valorBotaoEnviar2);
-  sessionStorage.setItem('nomeProduto', textoBotaoEnviar2);
-  }
+  //----------------------------------------------------------------------------------------------------
+  // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  let indiceProduto = sessionStorage.length;
+  let indiceValor = sessionStorage.length;
+  const NomeValorProduto = () => {
 
-  const concluirCompra2 = () => {
-    //estrutura para usar a coondição de obrigar escolher cor, tamanho e opção
+    // Obtenha a referência do botão usando um seletor mais específico
+    const botaoEnviar = document.querySelector(".concluir2");
+
+    // Verifique se o botão foi encontrado antes de prosseguir
+    if (botaoEnviar) {
+      // Obtenha os atributos do botão
+      const produto = botaoEnviar.getAttribute('data-text3');
+      const valor = parseFloat(botaoEnviar.getAttribute('data-value3'));
+
+      // Use o índice atual para criar chaves únicas no sessionStorage
+      const TipoProduto = `escolhaProduto_${indiceProduto}`;
+      const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+
+      // Armazene os novos itens no sessionStorage
+      sessionStorage.setItem(TipoProduto, produto);
+      sessionStorage.setItem(TipoProdutoValor, valor);
+    }
+  };
+
+
+
+
+  //-------------------------------------------------------------
+
+
+
+  const concluirCompra = () => {
+    //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
     const coresSelecionadas = document.querySelector('.cores2:active');
     const tamanhoSelecionado = document.querySelector('.tamanhos2:active');
     const opcaoSelecionada = document.getElementById('opcoes2').value;
@@ -177,13 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
     // Redirecionar para a próxima página
-    window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    window.location.href = '/lancamentos/compras/comprasFeitas.html';
 
   }
-  definirValoresSessionStorage2();
-  document.querySelector(".concluir2").addEventListener("click", ()=>{
-    concluirCompra2();
+  definirValoresSessionStorage();
+  document.querySelector(".concluir2").addEventListener("click", () => {
+    concluirCompra();
     NomeValorProduto();
+
   })
 });
-

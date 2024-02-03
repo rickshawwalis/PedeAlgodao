@@ -62,28 +62,28 @@ document.addEventListener('click', (e) => {
         imagemSapato6.innerHTML = "";
 
         if (el.classList.contains("azulmarinho6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM/azulmarinho.jpeg';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM/azulmarinho.jpeg';
             el.style.backgroundColor = "#666F8C";
         }
         if (el.classList.contains("azulpiscina6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM/azulpiscina.jpeg';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM/azulpiscina.jpeg';
             el.style.backgroundColor = "#3FB3CA";
         }
         if (el.classList.contains("verdepiscina6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM/verdepiscina.png';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM/verdepiscina.png';
             el.style.backgroundColor = "#8AECEF";
         }
         if (el.classList.contains("branca6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM/branca.jpeg';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM/branca.jpeg';
             el.style.backgroundColor = "white";
         }
         if (el.classList.contains("preto6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM/preto.jpeg';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM/preto.jpeg';
             el.style.backgroundColor = "black";
         }
         
         if (el.classList.contains("rosa6")) {
-            imagem.src = '/PedeAlgodao/img-Index/PLUMAMOCASSIM//rosa.jpeg';
+            imagem.src = '/lancamentos/img-Index/PLUMAMOCASSIM//rosa.jpeg';
             el.style.backgroundColor = "#E29EAD";
         }
         
@@ -106,65 +106,95 @@ document.addEventListener('click', (ev) => {
     }
   });
 
-  //PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
+   //-------------------------------------------------------------
+//PARTE QUE ARMAZENA NO SESSIONSTORAGE E MANDA
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicialização de índices fora da função
+  let indiceCores = sessionStorage.length;
+  let indiceTamanhos = sessionStorage.length;
+  let indiceOpcao = sessionStorage.length;
 
-    // Lógica para definir valores no sessionStorage
-    const definirValoresSessionStorage6 = () => {
-   
-  
-      // Ouvinte de evento para os botões de modelos (cores)
-      const botaoModelos = document.querySelectorAll(".cores6");
-      botaoModelos.forEach(corModelos => {
-        corModelos.addEventListener("click", () => {
-          const corModelo = corModelos.value;
-          sessionStorage.setItem('escolhaCor', corModelo);
-        })
-      })
-  
-      // Ouvinte de evento para os botões de tamanhos
-      const botaoTamanhos = document.querySelectorAll(".tamanhos6");
-      botaoTamanhos.forEach(tamanho => {
-        tamanho.addEventListener("click", () => {
-          const valorTamanho = tamanho.value;
-          sessionStorage.setItem('escolhaTamanho', valorTamanho);
-        })
-      })
-  
-      // Ouvinte de evento para a opção de quantidade
-      document.getElementById('opcoes6').addEventListener('change', function () {
-        const opcaoEscolhida = this.value;
-        sessionStorage.setItem('opcaoQuantidade', opcaoEscolhida);
-      })
-    }
+  // Lógica para definir valores no sessionStorage
+  const definirValoresSessionStorage = () => {
+    // Ouvinte de evento para os botões de modelos (cores)
+    const botaoModelos = document.querySelectorAll(".cores6");
 
-    const NomeValorProduto =()=>{
-        // Dados do botão "Concluir"
-        const botaoEnviar6 = document.querySelector(".concluir6");
-        const valorBotaoEnviar6 = parseFloat(botaoEnviar6.getAttribute('data-value7'));
-        const textoBotaoEnviar6 = botaoEnviar6.getAttribute('data-text7');
-        sessionStorage.setItem('valorProduto', valorBotaoEnviar6);
-        sessionStorage.setItem('nomeProduto', textoBotaoEnviar6);
-     }
-  
-    const concluirCompra6 = () => {
-      //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
-      const coresSelecionadas = document.querySelector('.cores6:active');
-      const tamanhoSelecionado = document.querySelector('.tamanhos6:active');
-      const opcaoSelecionada = document.getElementById('opcoes6').value;
-  
-      if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
-        alert("Para prosseguir, escolha: cor, tamanho e quantidade");
-        return false;
-      }
-      // Redirecionar para a próxima página
-      //window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
-      window.location.href = '/PedeAlgodao/CARRINHO/comprasFeitas.html';
+    botaoModelos.forEach(corModelos => {
+      corModelos.addEventListener("click", () => {
+        const corModelo = corModelos.value;
+        const EscolhaCor = `cores_${indiceCores}`;
+        sessionStorage.setItem(EscolhaCor, corModelo);
+         });
+    });
+
+    // Ouvinte de evento para os botões de tamanhos
+    const botaoTamanhos = document.querySelectorAll(".tamanhos6");
+    botaoTamanhos.forEach(tamanho => {
+      tamanho.addEventListener("click", () => {
+        const valorTamanho = tamanho.value;
+        const EscolhaTamanho = `tamanhos_${indiceTamanhos}`;
+        sessionStorage.setItem(EscolhaTamanho, valorTamanho);
+      });
+    });
+
+    // Ouvinte de evento para a opção de quantidade
+    document.getElementById('opcoes6').addEventListener('change', function () {
+      const opcaoEscolhida = this.value;
+      const EscolhaOpcao = `opcoes_${indiceOpcao}`;
+      sessionStorage.setItem(EscolhaOpcao, opcaoEscolhida);
+    });
+  };
+
+  //----------------------------------------------------------------------------------------------------
+  // Declare os índices fora da função para que eles não sejam redefinidos a cada chamada da função
+  let indiceProduto = sessionStorage.length;
+  let indiceValor = sessionStorage.length;
+  const NomeValorProduto = () => {
+
+    // Obtenha a referência do botão usando um seletor mais específico
+    const botaoEnviar = document.querySelector(".concluir6");
+
+    // Verifique se o botão foi encontrado antes de prosseguir
+    if (botaoEnviar) {
+      // Obtenha os atributos do botão
+      const produto = botaoEnviar.getAttribute('data-text7');
+      const valor = parseFloat(botaoEnviar.getAttribute('data-value7'));
+
+      // Use o índice atual para criar chaves únicas no sessionStorage
+      const TipoProduto = `escolhaProduto_${indiceProduto}`;
+      const TipoProdutoValor = `escolhaProdutoValor_${indiceValor}`;
+
+      // Armazene os novos itens no sessionStorage
+      sessionStorage.setItem(TipoProduto, produto);
+      sessionStorage.setItem(TipoProdutoValor, valor);
     }
-    definirValoresSessionStorage6();
-    document.querySelector(".concluir6").addEventListener("click", ()=>{
-      NomeValorProduto();
-      concluirCompra6();
-    })
-  });
-  
+  };
+
+
+
+
+  //-------------------------------------------------------------
+
+
+
+  const concluirCompra = () => {
+    //estrutura para usar a condição de obrigar escolher cor, tamanho e opção
+    const coresSelecionadas = document.querySelector('.cores6:active');
+    const tamanhoSelecionado = document.querySelector('.tamanhos6:active');
+    const opcaoSelecionada = document.getElementById('opcoes6').value;
+
+    if (!coresSelecionadas && !tamanhoSelecionado && opcaoSelecionada === '---') {
+      alert("Para prosseguir, escolha: cor, tamanho e quantidade");
+      return false;
+    }
+    // Redirecionar para a próxima página
+    window.location.href = '/lancamentos/compras/comprasFeitas.html';
+
+  }
+  definirValoresSessionStorage();
+  document.querySelector(".concluir6").addEventListener("click", () => {
+    concluirCompra();
+    NomeValorProduto();
+
+  })
+});
